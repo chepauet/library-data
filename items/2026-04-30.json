@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-04-30T11:10:54.038209+00:00",
+  "lookback_hours": 48,
+  "items": [
+    {
+      "url": "https://centrifuge.io/blog/from-tokenization-to-vaults-onchain-capital-stack",
+      "title": "",
+      "fuente": "Centrifuge",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "equity onchain",
+        "settlement",
+        "unified ledger",
+        "Transfer Agent"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge describe la evolución de la infraestructura onchain desde tokenización de activos tradicionales hacia gestión de activos nativa onchain y originación de colateral. La plataforma enfatiza arquitectura multicadena, multiativos y multiclase de participación para replicar la complejidad de mercados de capitales tradicionales. Importa para Transfer Agent y tokenización institucional porque establece estándares de composabilidad y operatividad requeridos para que activos reales funcionen como bloques de construcción en DeFi."
+    },
+    {
+      "url": "https://centrifuge.io/blog/onchain-pm",
+      "title": "",
+      "fuente": "Centrifuge",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "Transfer Agent",
+        "settlement",
+        "private credit",
+        "unified ledger",
+        "cross-border"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge lanza el Onchain Portfolio Manager en V3.2, que permite a gestores de activos operar un único vault con tesorería tokenizada, crédito, acciones y posiciones de lending onchain, rebalanceando entre todos ellos con contabilidad unificada y ejecución onchain. La plataforma abstrae múltiples chains, integra estándares como ERC-7540 y ERC-4626, e incluye controles de seguridad (slippage guard, allowance guard, circuit breaker) y contabilidad para activos en tránsito. Importa para Transfer Agent y tokenización institucional porque cierra el ciclo de gestión de activos onchain (emisión, pricing, distribución, gestión activa) sin requerir sistemas separados ni reconciliación offchain."
+    },
+    {
+      "url": "https://centrifuge.io/blog/tokenized-assets-work-onchain",
+      "title": "",
+      "fuente": "Centrifuge",
+      "categorias": [
+        "Infra / Tecnología",
+        "Opinión / Análisis"
+      ],
+      "tags": [
+        "private credit",
+        "settlement",
+        "unified ledger",
+        "equity onchain"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge analiza cómo los activos tokenizados deben funcionar como instrumentos financieros activos en mercados descentralizados, no solo como certificados digitales. Propone separar la emisión de la distribución y integrar activos onchain con protocolos DeFi, mercados secundarios y colaterales para habilitar liquidez, eficiencia de capital y circulación continua. Importa para tokenización institucional porque define la diferencia entre representación onchain y utilidad de mercado real."
+    }
+  ]
+}
