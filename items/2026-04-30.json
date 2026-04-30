@@ -1,58 +1,394 @@
 {
-  "generated_at": "2026-04-30T11:10:54.038209+00:00",
+  "generated_at": "2026-04-30T11:24:21.523525+00:00",
   "lookback_hours": 48,
   "items": [
     {
-      "url": "https://centrifuge.io/blog/from-tokenization-to-vaults-onchain-capital-stack",
-      "title": "",
-      "fuente": "Centrifuge",
+      "url": "https://www.bis.org/publ/othp109.htm",
+      "title": "Project Spectrum: using generative AI to enhance inflation nowcasting",
+      "fuente": "BIS",
+      "categorias": [
+        "Infra / Tecnología",
+        "Opinión / Análisis"
+      ],
+      "tags": [],
+      "published_at": null,
+      "resumen": "El BIS, Bundesbank y BCE desarrollan Project Spectrum, un sistema que combina embeddings de texto con machine learning para clasificar automáticamente millones de productos en análisis de inflación. La solución se probó sobre el Daily Price Dataset del BCE (34 millones de productos únicos) y convierte descripciones de productos fragmentadas en datos estructurados. La utilidad es marginal para tokenización institucional; el enfoque es monetario y de análisis macroeconómico central, no blockchain."
+    },
+    {
+      "url": "https://www.bis.org/publ/othp108.htm",
+      "title": "Project FuSSE: exploring flexible, scalable and secure settlement engines",
+      "fuente": "BIS",
+      "categorias": [
+        "Infra / Tecnología",
+        "Regulación"
+      ],
+      "tags": [
+        "settlement",
+        "unified ledger"
+      ],
+      "published_at": null,
+      "resumen": "El BIS presenta Project FuSSE, un proof-of-concept que explora cómo una arquitectura modular basada en microservicios puede soportar motores de liquidación escalables, flexibles y seguros. El proyecto logró procesar 10.000 transacciones por segundo con escalado sub-proporcional de recursos, e integró criptografía post-cuántica y agilidad criptográfica. Importa para infraestructuras de liquidación institucional y tokenización porque demuestra viabilidad técnica de sistemas que escalen bajo presión, se adapten a cambios regulatorios y aseguren resiliencia criptográfica a largo plazo."
+    },
+    {
+      "url": "https://www.bis.org/publ/othp106.htm",
+      "title": "Project Rialto: improving instant cross-border payments using central bank money settlement (technical report)",
+      "fuente": "BIS",
+      "categorias": [
+        "Infra / Tecnología",
+        "Regulación"
+      ],
+      "tags": [
+        "CBDC",
+        "settlement",
+        "cross-border",
+        "unified ledger"
+      ],
+      "published_at": null,
+      "resumen": "El BIS presenta Project Rialto, un experimento técnico que combina liquidación de pagos instantánea (PvP), conversión automática de FX y dinero central tokenizado para mejorar pagos transfronterizos de bajo valor como remesas. El trabajo importa para infraestructuras de tokenización institucional y settlement cross-border, mostrando viabilidad técnica de modelos que reducen fricción en conversión de divisas y liquidación final."
+    },
+    {
+      "url": "https://www.esma.europa.eu/document/guidelines-standard-forms-formats-and-templates-apply-permission-operate-dlt-market",
+      "title": "Guidelines on standard forms, formats and templates to apply for permission to operate a DLT market infrastructure",
+      "fuente": "ESMA",
+      "categorias": [
+        "Regulación",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "DLT Pilot",
+        "settlement"
+      ],
+      "published_at": null,
+      "resumen": "ESMA publica guías sobre formularios, formatos y plantillas estándar para solicitar permiso como infraestructura de mercado DLT bajo la regulación DLT Pilot. Estandariza el proceso de solicitud regulatoria en la UE. Importa para cualquier plataforma de tokenización institucional (incluida Securitize) que quiera operar como mercado DLT regulado en Europa."
+    },
+    {
+      "url": "https://www.esma.europa.eu/document/mica-order-book-and-records-keeping-message-specifications",
+      "title": "MiCA order book and records keeping message specifications",
+      "fuente": "ESMA",
+      "categorias": [
+        "Regulación",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "MiCA"
+      ],
+      "published_at": null,
+      "resumen": "ESMA publica especificaciones de mensajería para libros de órdenes y mantenimiento de registros bajo MiCA. Define formatos y estándares técnicos que deben cumplir las plataformas de criptoactivos y proveedores de servicios. Importa porque establece los requisitos de interoperabilidad y reportes que afectarán directamente a Transfer Agents y plataformas de tokenización institucional en la UE."
+    },
+    {
+      "url": "https://www.esma.europa.eu/document/mica-taxonomy-2025",
+      "title": "MiCA White Paper Taxonomy 2025",
+      "fuente": "ESMA",
+      "categorias": [
+        "Regulación",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "MiCA"
+      ],
+      "published_at": null,
+      "resumen": "ESMA publica la taxonomía 2025 para White Papers bajo MiCA, incluyendo esquema XBRL, reglas de validación y herramientas Excel para reportes estandarizados de tokens (EMT, ART, OTHR). Importa porque establece el formato técnico obligatorio para emisores que tokenicen activos bajo regulación europea y afecta directamente los flujos de compliance y disclosure en plataformas como Securitize."
+    },
+    {
+      "url": "https://www.weforum.org/about/world-economic-forum/",
+      "title": "Our Institutional Framework",
+      "fuente": "WEF",
+      "categorias": [
+        "Opinión / Análisis"
+      ],
+      "tags": [],
+      "published_at": null,
+      "resumen": "El WEF describe su marco institucional como plataforma de cooperación público-privada fundada en 1971 para conectar líderes globales en torno a desafíos comunes. No es relevante para BUIDL, Transfer Agent o tokenización institucional."
+    },
+    {
+      "url": "https://www.weforum.org/about/our-strategy/",
+      "title": "Our Mission",
+      "fuente": "WEF",
+      "categorias": [
+        "Opinión / Análisis"
+      ],
+      "tags": [],
+      "published_at": null,
+      "resumen": "El WEF presenta su misión institucional de mejorar el estado del mundo a través de cooperación público-privada, operando en tres áreas de impacto (Crecimiento, Resiliencia e Innovación) y cinco desafíos globales. No es relevante para BUIDL, Transfer Agent o tokenización institucional."
+    },
+    {
+      "url": "https://www.weforum.org/videos/small-language-models-future-ai/",
+      "title": "Small language models’ could be the future of AI, says this expert",
+      "fuente": "WEF",
+      "categorias": [
+        "Opinión / Análisis"
+      ],
+      "tags": [],
+      "published_at": null,
+      "resumen": "El video presenta la propuesta de la experta en IA Yejin Choi sobre modelos de lenguaje pequeños y especializados como alternativa a los grandes LLMs. Estos modelos utilizan menos recursos, se entrenan mediante interacción y reflejan valores plurales de sus creadores, lo que permite incluir perspectivas de comunidades fuera del dominio del inglés. No aplica directamente a BUIDL, Transfer Agent o tokenización institucional."
+    },
+    {
+      "url": "https://superstate.com/newsroom/superstate-and-coinlist-onchain-capital-formation-ipos-direct-issuance-program",
+      "title": "Superstate and CoinList Bring Onchain Capital Formation to 12M+ Users",
+      "fuente": "Superstate",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "MMF tokenizado",
+        "BUIDL",
+        "equity onchain"
+      ],
+      "published_at": null,
+      "resumen": "Superstate y CoinList integran capacidades de formación de capital onchain en la plataforma de CoinList, llegando a más de 12 millones de usuarios. La integración permite acceso a productos tokenizados de Superstate (incluyendo fondos del mercado monetario) a través de un distribuidor regulado. Relevante para BUIDL porque expande los canales de distribución de activos tokenizados institucionales hacia retail calificado."
+    },
+    {
+      "url": "https://superstate.com/newsroom/the-next-battlefield-for-asset-managers-is-onchain",
+      "title": "The Next Battlefield for Asset Managers is Onchain",
+      "fuente": "Superstate",
+      "categorias": [
+        "Opinión / Análisis",
+        "Producto / Competidores"
+      ],
+      "tags": [
+        "equity onchain",
+        "settlement",
+        "Transfer Agent"
+      ],
+      "published_at": null,
+      "resumen": "Superstate argumenta que los gestores de activos están desplazando la competencia hacia infraestructuras onchain para emisión y custodia de activos tokenizados. El movimiento refleja presión regulatoria, demanda de settlement en tiempo real y fragmentación de plataformas de tokenización. Es relevante para BUIDL porque afecta directamente a cómo Transfer Agents y plataformas como Securitize posicionan la tokenización institucional frente a alternativas legacy."
+    },
+    {
+      "url": "https://superstate.com/newsroom/invesco-superstate-bring-world-class-funds-onchain",
+      "title": "Invesco and Superstate Join Forces to Bring World-Class Funds Onchain",
+      "fuente": "Superstate",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "MMF tokenizado",
+        "unified ledger"
+      ],
+      "published_at": null,
+      "resumen": "Invesco y Superstate se asocian para llevar fondos institucionales a blockchain. La colaboración permite que Invesco distribuya fondos tokenizados a través de la infraestructura de Superstate, mejorando el acceso a activos tradicionales onchain. Importa porque acelera la adopción de fondos tokenizados (como MMF) en infraestructura DLT institucional."
+    },
+    {
+      "url": "https://superstate.com/newsroom/onchain-markets-are-too-big-to-ignore",
+      "title": "Onchain Markets Are Too Big to Ignore",
+      "fuente": "Superstate",
+      "categorias": [
+        "Opinión / Análisis",
+        "Datos / Mercado"
+      ],
+      "tags": [
+        "equity onchain"
+      ],
+      "published_at": null,
+      "resumen": "Superstate argumenta que los mercados onchain han alcanzado una escala que obliga a las instituciones financieras a prestarles atención. La tesis apunta a que el crecimiento de activos tokenizados y la liquidez en cadena son ahora demasiado grandes para ser descartados por participantes tradicionales. Importa para BUIDL y la tokenización institucional porque refleja la validación del mercado sobre la viabilidad de los activos digitales como clase de inversión relevante."
+    },
+    {
+      "url": "https://superstate.com/newsroom/tokenized-onchain-ipos",
+      "title": "The Future of IPOs Is Tokenized",
+      "fuente": "Superstate",
+      "categorias": [
+        "Opinión / Análisis",
+        "Producto / Competidores"
+      ],
+      "tags": [
+        "equity onchain",
+        "settlement"
+      ],
+      "published_at": null,
+      "resumen": "Superstate analiza cómo la tokenización transformaría el proceso de IPO tradicional, permitiendo emisión continua de valores, liquidez instantánea y acceso global a inversores institucionales. La relevancia para BUIDL y Transfer Agent radica en que la infraestructura de tokenización institucional (como la que proporciona Securitize) sería clave para ejecutar IPOs onchain con cumplimiento regulatorio."
+    },
+    {
+      "url": "https://superstate.com/newsroom/tokenized-stocks-native-wrapped-shares",
+      "title": "The Tokenized Stock Divide: Native Shares vs. Wrapped",
+      "fuente": "Superstate",
       "categorias": [
         "Producto / Competidores",
         "Infra / Tecnología"
       ],
       "tags": [
         "equity onchain",
-        "settlement",
-        "unified ledger",
         "Transfer Agent"
       ],
       "published_at": null,
-      "resumen": "Centrifuge describe la evolución de la infraestructura onchain desde tokenización de activos tradicionales hacia gestión de activos nativa onchain y originación de colateral. La plataforma enfatiza arquitectura multicadena, multiativos y multiclase de participación para replicar la complejidad de mercados de capitales tradicionales. Importa para Transfer Agent y tokenización institucional porque establece estándares de composabilidad y operatividad requeridos para que activos reales funcionen como bloques de construcción en DeFi."
+      "resumen": "Superstate analiza la diferencia entre acciones tokenizadas nativas (creadas directamente en blockchain) y acciones envueltas (wrapped, tokens que representan acciones tradicionales). El artículo examina trade-offs en custodia, liquidez y compatibilidad. Importa para entender la arquitectura de equity onchain y cómo los Transfer Agents deben escoltar ambos modelos en tokenización institucional."
     },
     {
-      "url": "https://centrifuge.io/blog/onchain-pm",
-      "title": "",
-      "fuente": "Centrifuge",
+      "url": "https://ondo.finance/blog/tokenized-stocks-live-on-binance",
+      "title": "Ondo and Binance Bring Tokenized Securities to Hundreds of Millions of Users",
+      "fuente": "Ondo",
       "categorias": [
         "Producto / Competidores",
         "Infra / Tecnología"
       ],
       "tags": [
-        "Transfer Agent",
-        "settlement",
-        "private credit",
-        "unified ledger",
-        "cross-border"
+        "equity onchain",
+        "settlement"
       ],
       "published_at": null,
-      "resumen": "Centrifuge lanza el Onchain Portfolio Manager en V3.2, que permite a gestores de activos operar un único vault con tesorería tokenizada, crédito, acciones y posiciones de lending onchain, rebalanceando entre todos ellos con contabilidad unificada y ejecución onchain. La plataforma abstrae múltiples chains, integra estándares como ERC-7540 y ERC-4626, e incluye controles de seguridad (slippage guard, allowance guard, circuit breaker) y contabilidad para activos en tránsito. Importa para Transfer Agent y tokenización institucional porque cierra el ciclo de gestión de activos onchain (emisión, pricing, distribución, gestión activa) sin requerir sistemas separados ni reconciliación offchain."
+      "resumen": "Ondo y Binance integran valores tokenizados en la plataforma de Binance, ampliando el acceso a productos de renta fija y seguridad tokenizada para cientos de millones de usuarios. Importa para BUIDL porque expande los canales de distribución de activos institucionales tokenizados y valida el modelo de valores onchain en exchanges de retail de escala masiva."
     },
     {
-      "url": "https://centrifuge.io/blog/tokenized-assets-work-onchain",
-      "title": "",
+      "url": "https://ondo.finance/blog/introducing-ondo-global-listing",
+      "title": "Introducing Ondo Global Listing: A New Service to Tokenize Stock IPOs on Listing Day Across Multiple Blockchains",
+      "fuente": "Ondo",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "equity onchain",
+        "Transfer Agent"
+      ],
+      "published_at": null,
+      "resumen": "Ondo lanza un servicio para tokenizar ofertas públicas de acciones (IPOs) en el día de cotización en múltiples blockchains. El servicio permite que valores tradicionales se representen en cadenas de bloques el mismo día de su salida al mercado, acelerando el acceso institucional y la liquidez de mercado en activos onchain."
+    },
+    {
+      "url": "https://ondo.finance/blog/ondo-partners-with-broadridge-for-tokenized-stocks-voting-capabilities",
+      "title": "Ondo Partners With Broadridge to Bring Voting Capabilities to Tokenized Stocks",
+      "fuente": "Ondo",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "equity onchain",
+        "Transfer Agent"
+      ],
+      "published_at": null,
+      "resumen": "Ondo se asocia con Broadridge para agregar capacidades de voto a acciones tokenizadas. Esto permite que los tenedores de equity onchain ejerzan derechos de voto en línea con la gobernanza corporativa tradicional. Importa porque resuelve un obstáculo regulatorio y operativo clave para que equity tokenizado sea viable en mercados institucionales."
+    },
+    {
+      "url": "https://centrifuge.io/tokenization-outlook-2026",
+      "title": "Tokenization Outlook 2026 | Centrifuge",
       "fuente": "Centrifuge",
       "categorias": [
-        "Infra / Tecnología",
-        "Opinión / Análisis"
+        "Datos / Mercado",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "settlement",
+        "unified ledger"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge publica un informe con 150 operadores del ecosistema de activos tokenizados identificando que la distribución importa más que la emisión, que la composabilidad es el caso de uso real, y que regulación y liquidez son los principales cuellos de botella, no la tecnología. Importa para BUIDL y Transfer Agents porque mapea las prioridades reales del mercado institucional de tokenización y señala dónde se concentran los esfuerzos para escalar productos onchain."
+    },
+    {
+      "url": "https://centrifuge.io/category/announcements",
+      "title": "Announcements | Centrifuge Blog",
+      "fuente": "Centrifuge",
+      "categorias": [
+        "Datos / Mercado",
+        "Producto / Competidores"
+      ],
+      "tags": [
+        "equity onchain",
+        "MMF tokenizado"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge publica un informe (Tokenization Outlook 2026) basado en 150 operadores sobre qué se necesita para escalar activos tokenizados, y anuncia el lanzamiento de deSPXA en Base, un producto tokenizado que da exposición al fondo de índice S&P 500 de Anemoy, gestionado por Janus Henderson. Importa porque muestra tracción en tokenización institucional de fondos indexados y proporciona datos del mercado sobre barreras de escala para emisores y Transfer Agents."
+    },
+    {
+      "url": "https://centrifuge.io/category/product-tech",
+      "title": "Product & Tech | Centrifuge Blog",
+      "fuente": "Centrifuge",
+      "categorias": [
+        "Producto / Competidores",
+        "Datos / Mercado"
       ],
       "tags": [
         "private credit",
-        "settlement",
         "unified ledger",
+        "settlement"
+      ],
+      "published_at": null,
+      "resumen": "Centrifuge publica su informe Tokenization Outlook 2026 basado en encuestas a 150 operadores del sector sobre requisitos para escalar activos tokenizados. La plataforma ofrece infraestructura para emisores (lanzar productos tokenizados bajo marca propia), distribución de activos institucionales (deRWA), y gestión completa (Anemoy). Importa para BUIDL y Transfer Agent porque mapea necesidades reales del mercado institucional y expone el stack técnico requerido para tokenización a escala."
+    },
+    {
+      "url": "https://rwa.xyz/blog/robinhoods-tokenized-stocks-the-good-the-bad-and-the-fix",
+      "title": "Research Robinhood’s Tokenized Stocks: The Good, The Bad, and The Fix January 27, 2026 10 minutes Bryan Choe",
+      "fuente": "RWA.xyz",
+      "categorias": [
+        "Producto / Competidores",
+        "Datos / Mercado"
+      ],
+      "tags": [
         "equity onchain"
       ],
       "published_at": null,
-      "resumen": "Centrifuge analiza cómo los activos tokenizados deben funcionar como instrumentos financieros activos en mercados descentralizados, no solo como certificados digitales. Propone separar la emisión de la distribución y integrar activos onchain con protocolos DeFi, mercados secundarios y colaterales para habilitar liquidez, eficiencia de capital y circulación continua. Importa para tokenización institucional porque define la diferencia entre representación onchain y utilidad de mercado real."
+      "resumen": "Robinhood lanzó tokenización de acciones on-chain y el análisis examina fortalezas, debilidades y mejoras necesarias. La pieza subraya la importancia de APIs y datos robustos para que la tokenización de equity sea viable a escala institucional, un factor crítico para que plataformas como Securitize puedan servir a emisores en este segmento."
+    },
+    {
+      "url": "https://rwa.xyz/blog/announcing-real-estate-dashboard",
+      "title": "Product Update Announcing Tokenized Real Estate Dashboard January 21, 2026 5 minutes Bryan Choe",
+      "fuente": "RWA.xyz",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología"
+      ],
+      "tags": [
+        "settlement"
+      ],
+      "published_at": null,
+      "resumen": "RWA.xyz anuncia un dashboard para activos inmobiliarios tokenizados y ofrece soluciones de datos y APIs. Importa para infraestructura de tokenización institucional y visibilidad de mercado en activos reales."
+    },
+    {
+      "url": "https://rwa.xyz/blog/a-new-framework-for-tokenized-assets-distributed-and-represented",
+      "title": "Product Update A New Framework for Tokenized Assets: Distributed & Represented November 21, 2025 5 minutes Bryan Choe",
+      "fuente": "RWA.xyz",
+      "categorias": [
+        "Infra / Tecnología",
+        "Producto / Competidores"
+      ],
+      "tags": [
+        "Transfer Agent",
+        "settlement",
+        "unified ledger"
+      ],
+      "published_at": null,
+      "resumen": "RWA.xyz presenta un nuevo framework para activos tokenizados que distingue entre activos distribuidos (on-chain) y representados (wrapped/bridged). El framework define arquitecturas técnicas y flujos de liquidación para cada modelo, relevante para Transfer Agents y plataformas de tokenización institucional que necesitan estandarizar integraciones con múltiples blockchains y modelos de custodia."
+    },
+    {
+      "url": "https://research.artemis.ai/p/ai-data-center-infrastructure",
+      "title": "AI Data Center Infrastructure",
+      "fuente": "Artemis",
+      "categorias": [
+        "Opinión / Análisis"
+      ],
+      "tags": [],
+      "published_at": "2026-04-28",
+      "resumen": "Un análisis sobre cómo la escasez de energía es el cuello de botella principal para la expansión de infraestructura de IA, y cómo los operadores de Bitcoin que ya controlan capacidad energética en grid pueden convertir sus minas en data centers de HPC con ventaja competitiva en costos y velocidad de despliegue. No aplica directamente a BUIDL, Transfer Agent o tokenización institucional; es análisis de infraestructura física de AI."
+    },
+    {
+      "url": "https://www.galaxy.com/insights/research/zero-human-companies-ai-agents-defi-crypto",
+      "title": "The Agentic Flywheel: How Zero-Human Companies Will Reshape Onchain Markets",
+      "fuente": "Galaxy Digital",
+      "categorias": [
+        "Opinión / Análisis"
+      ],
+      "tags": [
+        "agentic payments",
+        "settlement"
+      ],
+      "published_at": null,
+      "resumen": "Galaxy Digital analiza cómo las empresas sin intervención humana (agentic systems) transformarán los mercados onchain mediante automatización de decisiones y ejecución. El artículo examina un flywheel donde agentes autónomos gestionan liquidez, trading y settlement sin intermediarios. Relevante para entender la evolución de infraestructuras de liquidación y pagos automatizados en tokenización institucional, aunque el enfoque es más especulativo que de aplicación inmediata en Transfer Agent o BUIDL."
+    },
+    {
+      "url": "https://kitchen.steakhouse.financial/p/defi-markets-update-2026-04-28",
+      "title": "DeFi Markets Update 2026-04-28",
+      "fuente": "Steakhouse",
+      "categorias": [
+        "Producto / Competidores",
+        "Infra / Tecnología",
+        "Datos / Mercado"
+      ],
+      "tags": [
+        "stablecoins",
+        "settlement",
+        "unified ledger"
+      ],
+      "published_at": "2026-04-28",
+      "resumen": "Steakhouse analiza oportunidades de préstamo en USDC sobre Base, donde Coinbase Borrow integra Morpho para créditos colateralizados. También examina el diseño de mercados de préstamos (pooled vs. aislados) tras el exploit de KelpDAO, destacando cómo Morpho mitiga contagio sistémico mediante aislamiento de riesgo. Finalmente, desglosa la inflación de volúmenes en stablecoins: los $35tn anuales incluyen ruido (trading, arbitraje, movimientos internos), mientras que pagos reales rondan $390bn. Importa para entender estructuras de riesgo en plataformas tokenizadas y validar demanda real de stablecoins institucionales frente a narrativas de volumen."
     }
   ]
 }
