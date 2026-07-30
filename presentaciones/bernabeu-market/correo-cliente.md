@@ -1,60 +1,55 @@
 # Correo para Bernabéu Market
 
-**Asunto:** Propuesta de colaboración — optimización web y sistema de pedidos por QR
-
-*(alternativa más corta: «Propuesta Odiseum — Bernabéu Market»)*
+**Para:** Lucía e Inés
+**Asunto:** Propuesta — web y pedidos por QR
 
 ---
 
-Hola [nombre]:
+Hola Lucía, hola Inés:
 
-Os adjunto la propuesta de colaboración. Dentro van los dos proyectos de los que hablamos,
-tratados por separado, porque están en momentos muy distintos.
+Ahí va por fin la propuesta. Van los dos proyectos en el mismo documento pero
+separados, porque están en puntos muy distintos.
 
-**Proyecto 1 — Optimización web.** Es el que va cerrado y con presupuesto: **1.900 € + IVA**,
-unas 3 semanas de trabajo. Cubre cuatro fases: auditoría y optimización técnica, mejoras de
-diseño, SEO y presencia en asistentes de IA. Esta última la incluimos sin coste, porque es un
-campo todavía experimental y preferimos trabajarlo con vosotros antes que cobrarlo.
+El primero, el de la web, va cerrado: 1.900 € + IVA y unas tres semanas. Son cuatro
+fases: auditoría y arreglo técnico, mejoras de diseño, SEO y presencia en los
+asistentes de IA. Esta última no os la cobramos, es un terreno todavía muy verde y
+preferimos ir viéndolo sobre la marcha antes que ponerle precio.
 
-Al terminar arranca el mantenimiento, **290 €/mes + IVA**, que es lo que evita que dentro de un
-año haya que repetir la auditoría desde cero. Lo menciono ahora para que lo tengáis en la foto
-completa desde el principio.
+Cuando acaban esas cuatro fases entra el mantenimiento, 290 €/mes + IVA. Os lo digo
+ya para que no os pille de nuevas: es lo que hace que dentro de un año no haya que
+repetir la auditoría entera.
 
-Ya hemos hecho una primera revisión de la web y hay cosas que conviene mirar pronto: hay
-plugins en versión *beta* funcionando en producción, 41 de las 43 imágenes de la portada no
-tienen texto alternativo, y la página de contacto muestra en Google el título y la descripción
-de la página de eventos. Nada dramático, pero son puntos que hoy os están restando.
+Por cierto, ya le hemos dado un primer repaso a la web y hay un par de cosas que
+pican. Tenéis plugins en versión beta corriendo en producción, 41 de las 43 imágenes
+de la portada no tienen texto alternativo, y la página de contacto le está enseñando
+a Google el título y la descripción de la de eventos. Nada grave, pero son cosas que
+os están restando cada día.
 
-**Sobre el precio del Proyecto 1, quiero ser transparente.** Los 1.900 € no reflejan el coste
-real del trabajo que hay detrás. Los hemos ajustado a propósito porque nos interesa que
-empecéis a trabajar con nosotros y veáis cómo lo hacemos antes de meternos en el Proyecto 2,
-que es el desarrollo de verdad. Por eso ese precio va ligado a que sigamos adelante con el
-segundo: si finalmente decidís no abordarlo, el Proyecto 1 se queda en **2.900 € + IVA**, que
-es lo que cuesta por sí solo.
+Sobre el precio os lo cuento tal cual. Los 1.900 no cubren lo que cuesta el trabajo.
+Los hemos puesto así a propósito porque nos interesa que empecéis con nosotros y
+veáis cómo trabajamos antes de meternos en el segundo proyecto, que es donde está el
+desarrollo de verdad. Por eso van ligados a que sigamos con él: si al final decidís
+no hacerlo, el primero se queda en 2.900 € + IVA, que es lo que vale por su cuenta.
 
-**Proyecto 2 — Sistema de pedidos por QR.** Aquí todavía no os puedo dar un número cerrado, y
-prefiero no inventármelo. Hemos estado investigando y tenemos claro el enfoque: un QR por mesa,
-el cliente elige el local, y el pedido entra directo en el sistema del restaurante. El problema
-es que el alcance depende de si HIOPOS —el TPV que usan los 19 locales— tiene API o webhooks
-abiertos. Entre que la tenga y que no, la diferencia de coste es muy grande, así que dar una
-cifra ahora sería engañaros.
+El segundo, el de los QR, es el que todavía no puedo presupuestar. No es por no
+haberlo mirado. Lo hemos estado investigando y tenemos claro el planteamiento (un QR
+por mesa, el cliente elige local, y el pedido entra directo en el sistema del
+restaurante), pero todo depende de si HIOPOS tiene API abierta o no. Entre una cosa y
+otra el precio se va muchísimo, y prefiero no daros un número que luego no se
+sostenga.
 
-Para cerrarlo necesitamos dos reuniones: una con vuestro equipo técnico, para poner en común el
-planteamiento, y otra con HIOPOS, para confirmar qué permite su sistema. De esa respuesta
-depende todo lo demás.
+Para aterrizarlo hacen falta dos reuniones: una con vuestro equipo técnico, para
+poner en común el enfoque, y otra con HIOPOS, para que nos confirmen qué deja hacer
+su sistema. De ahí sale todo lo demás. Ese análisis entero, las reuniones, el estudio
+y deciros qué implica cada opción, va sin coste si aceptáis el primer proyecto.
 
-Ese análisis completo de viabilidad —las reuniones, el estudio y el asesoramiento sobre las
-opciones— **lo incluimos sin coste adicional si aceptáis el Proyecto 1**.
+Si os encaja, montamos una reunión de arranque, nos pasáis los accesos (WordPress,
+hosting, Analytics y Google Business Profile) y empezamos con la Fase 1. En esa misma
+reunión dejamos agendada la sesión con vuestro equipo técnico y vamos abriendo el
+segundo en paralelo.
 
-**Siguientes pasos.** Si os encaja, lo suyo sería una reunión de arranque, nos facilitáis los
-accesos (WordPress, hosting, Analytics y Google Business Profile) y empezamos con la Fase 1. En
-esa misma reunión podemos dejar agendada la sesión con vuestro equipo técnico para ir abriendo
-el Proyecto 2 en paralelo.
-
-Cualquier duda con la propuesta, decidme y lo vemos por teléfono cuando os venga bien.
+Cualquier cosa me decís y lo hablamos por teléfono cuando os venga bien.
 
 Un abrazo,
 
 Pau
-Odiseum
-pau@odiseum.com
