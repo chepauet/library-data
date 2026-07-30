@@ -7,28 +7,31 @@ reconstruida a partir del PDF de la versión nueva pero **sin las manchas**.
 
 Dos cosas distintas, las dos del efecto "liquid glass" del HTML original:
 
-1. **La foto de la bandada de estorninos** (`birds`) estaba asignada a las páginas 2 y 8,
-   las dos más densas. El manchón negro moteado de los pájaros caía justo detrás de las
-   tarjetas y del texto.
-2. **Cada tarjeta llevaba dentro una copia difuminada de la foto de fondo**
+1. **Cada tarjeta llevaba dentro una copia difuminada de la foto de fondo**
    (`<img class="frost">`, reposicionada por JS en cada repintado). Al imprimir, esa capa
    se convertía en un borrón sucio dentro de la propia tarjeta.
+2. **La foto a sangre detrás de las páginas de contenido.** Este es el problema de fondo y
+   no se arregla con ajustes: en esas páginas las tarjetas ocupan casi toda la superficie,
+   así que de la foto solo asoma un borde irregular y desenfocado entre ellas. Eso siempre
+   se lee como un borrón, no como una imagen. Se probó a subir el velo (la foto quedaba
+   como una silueta sin forma, peor) y a bajarlo (volvían a asomar las manchas).
 
 ## Qué se ha cambiado
 
-Las fotos se mantienen: son la dirección de arte de la marca.
+Las fotos se mantienen: son la dirección de arte de la marca. Pero solo donde tienen
+espacio para leerse como fotografía.
 
-- **Se elimina la capa `frost`.** Cada tarjeta pasa a tener un velo oscuro propio, opaco y
-  uniforme. El texto nunca se apoya directamente sobre la foto, así que da igual lo que
-  pase por detrás de la tarjeta.
-- **Velo general sobre la foto**, para que ninguna zona oscura de la imagen compita con el
-  texto de cabecera, que sí va directo sobre ella (y por eso conserva sombra de legibilidad).
-- **Reasignación de fondos.** `birds` (la bandada) se queda solo en el cierre, que casi no
-  tiene texto y es donde luce. Las páginas densas usan `surf` y `roll`, las más suaves.
-  `eames` (el cartel de puntos negros) sale del rotativo: detrás de una tarjeta siempre se
-  leía como moteado.
+- **Se elimina la capa `frost`.** Cada tarjeta es ahora un panel casi opaco y uniforme.
+- **Portada y cierre (`.slide.hero`): foto a sangre**, con un velo suave. Son las dos
+  páginas con poco texto, así que la imagen se ve entera y luce.
+- **Páginas de contenido: sin foto.** Superficie lisa de marca, en tres tonos que rotan
+  (`data-tone="a|b|c"`), degradados sobre negro cálido. Cero textura entre tarjetas, cero
+  manchas posibles.
 - Exportación a PDF a 1600×900 px a sangre (antes 1650×950 con margen blanco).
 - El logo va incrustado como SVG (`assets/odiseum-logo-white.svg`), no como PNG.
+
+De las cinco fotos originales se usan dos: `angel` (portada) y `birds` (cierre). Las otras
+quedan en `assets/fondos/` por si se quieren rotar o recuperar.
 
 El contenido es el de la versión nueva del PDF, no el del HTML antiguo. Incluye los
 cambios que traía esa versión: 290 €/mes de mantenimiento (antes 190 €), lista de
