@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odiseum · Propuesta Bernabéu Market</title>
+<style>
+:root{ color-scheme: dark;
+ --gold:#EBCB9E; --green:#8CE6BC; --amber:#F5CC80;
+ --w:#ffffff; --w85:rgba(255,255,255,.87); --w70:rgba(255,255,255,.72); --w50:rgba(255,255,255,.52);
+ --logo:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTg0IiBoZWlnaHQ9IjM4OCIgdmlld0JveD0iMCAwIDE1ODQgMzg4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9kaXNldW0iPgogIDxwYXRoIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTY0IDE5Mkw2NiAxODhMNjYgMTgwTDY3IDE4MEw3MCAxNjNMNzMgMTU4TDc1IDE0OUw3NyAxNDVMNzkgMTQ0TDc5IDE0MUw4MyAxMzNMODUgMTMyTDg3IDEyN0w5MCAxMjVMOTIgMTIwTDk2IDExN0w5NiAxMTVMMTAyIDExMEwxMDIgMTA4TDExMCAxMDBMMTEyIDEwMEwxMTUgOTZMMTE3IDk2TDEyMCA5MkwxMjIgOTJMMTI0IDg5TDEyNiA4OUwxMzMgODNMMTM2IDgzTDE0MCA3OUwxNDggNzdMMTU3IDcyTDE2MSA3MkwxNjMgNzBMMTY3IDcwTDE2NyA2OUwxNzUgNjhMMTc5IDY2TDE4OSA2NkwxOTIgNjRMMjE3IDY0TDIyMCA2NkwyMjkgNjZMMjMzIDY4TDIzOSA2OEwyNDEgNzBMMjQ2IDcwTDI0OCA3MkwyNTcgNzRMMjc1IDgzTDI3NiA4NUwyODAgODZMMjgxIDg4TDI4OSA5MkwyOTIgOTZMMjk0IDk2TDMwMyAxMDZMMjEzIDE5NkwyMTUgMTk2TDIxOSAxOTJMMjIyIDE5MkwyMjMgMTkwTDIyNiAxOTBMMjI4IDE4OEwyMzEgMTg4TDIzNyAxODVMMjQ4IDE4NEwyNDggMTgzTDI3MSAxODVMMjc3IDE4OEwyODEgMTg4TDI4MiAxOTBMMjg1IDE5MEwyODYgMTkyTDI4OSAxOTJMMjkwIDE5NEwyOTggMTk4TDMwNyAyMDdMMzA3IDIwOUwzMDkgMjA5TDMwOSAyMTFMMzE1IDIxOEwzMTggMjI0TDMxOCAyMjdMMzIwIDIyOEwzMjIgMjQwTDMyNCAyNDJMMzI0IDI2NUwzMjIgMjY2TDMyMiAyNzJMMzIxIDI3MkwzMjAgMjc4TDMxOCAyODBMMzE4IDI4M0wzMTUgMjg5TDMxMyAyOTBMMzExIDI5NUwzMDggMjk3TDMwOCAyOTlMMjkyIDMxM0wyODIgMzE4TDI3OSAzMThMMjc4IDMyMEwyNjQgMzIyTDI2MSAzMjRMMjQ3IDMyNEwyNDUgMzIyTDIzOCAzMjJMMjM4IDMyMUwyMzAgMzIwTDIyMCAzMTVMMjE5IDMxM0wyMTMgMzExTDIxMyAzMDlMMjA4IDMwN0wyMDEgMzAwTDIwMSAyOThMMTk2IDI5NEwxOTQgMjg4TDE5MiAyODdMMTkwIDI4MEwxODggMjc4TDE4NyAyNzJMMTg2IDI3MkwxODUgMjYwTDE4NCAyNjBMMTg1IDIzOUwxODYgMjM5TDE4NiAyMzVMMTkwIDIyN0wxOTAgMjI0TDE5NiAyMTVMMTk1IDIxM0wxMDUgMzAzTDk2IDI5NEw5NiAyOTJMOTMgMjkwTDkzIDI4OEw5MCAyODZMOTAgMjg0TDg2IDI4MEw3MyAyNTRMNzMgMjUxTDcyIDI1MUw3MiAyNDhMNzEgMjQ4TDcxIDI0NUw2OCAyMzlMNjggMjMzTDY2IDIyOUw2NiAyMjBMNjQgMjE3Wk0zODggMTg0TDM4OSAxODRMMzg5IDE3N0wzOTAgMTc3TDM5MiAxNjRMMzkzIDE2NEwzOTQgMTU4TDM5NiAxNTZMMzk2IDE1M0w0MDAgMTQ1TDQwMiAxNDRMNDAzIDE0MEw0MDggMTM1TDQwOCAxMzNMNDEzIDEyOUw0MTMgMTI3TDQxNyAxMjNMNDE5IDEyM0w0MjMgMTE4TDQyNSAxMThMNDI3IDExNUw0MjkgMTE1TDQzMCAxMTNMNDM0IDExMkw0MzUgMTEwTDQ0MyAxMDZMNDQ2IDEwNkw0NDggMTA0TDQ1MSAxMDRMNDU3IDEwMUw0NjUgMTAwTDQ2NSA5OUw0NzkgOThMNDc5IDk3TDUxMCA5OEw1MTAgOTlMNTI0IDEwMUw1MjQgMTAyTDUzMyAxMDRMNTM1IDEwNkw1MzggMTA2TDU0NiAxMTBMNTQ3IDExMkw1NTEgMTEzTDU1NiAxMThMNTU4IDExOEw1NjIgMTIzTDU2NCAxMjNMNTY5IDEyOEw1NjkgMTMwTDU3NCAxMzRMNTc0IDEzNkw1NzcgMTM4TDU3OCAxNDJMNTgwIDE0M0w1ODYgMTU1TDU4NiAxNThMNTg5IDE2M0w1OTAgMTcxTDU5MSAxNzFMNTkyIDE4M0w1OTMgMTgzTDU5MyAyMTFMNTkyIDIxMUw1OTAgMjI3TDU4OSAyMjdMNTg3IDIzNkw1ODQgMjQwTDU4MiAyNDdMNTgwIDI0OEw1NzkgMjUyTDU3NyAyNTNMNTc1IDI1OEw1NzIgMjYwTDU3MiAyNjJMNTU0IDI3OUw1NTIgMjc5TDU1MSAyODFMNTQyIDI4NUw1MzkgMjg4TDUzNiAyODhMNTMyIDI5MUw1MTkgMjk0TDUxOSAyOTVMNTE1IDI5NUw1MTUgMjk2TDUwMiAyOTdMNTAyIDI5OEw0NzEgMjk3TDQ3MSAyOTZMNDYxIDI5NUw0NjEgMjk0TDQ0OSAyOTFMNDQ3IDI4OUw0NDQgMjg5TDQzOCAyODZMNDM3IDI4NEw0MzMgMjgzTDQzMiAyODFMNDI3IDI3OUw0MjUgMjc2TDQyMyAyNzZMNDA2IDI1OEw0MDYgMjU2TDQwMiAyNTJMMzk1IDIzOEwzOTUgMjM1TDM5NCAyMzVMMzk0IDIzMkwzOTEgMjI2TDM5MSAyMjJMMzkwIDIyMkwzODkgMjA5TDM4OCAyMDlaTTQyNSAxODZMNDI2IDIxNEw0MjcgMjE0TDQyOSAyMjVMNDM2IDIzOUw0NDQgMjQ3TDQ0NCAyNDlMNDQ3IDI1MEw0NTEgMjU1TDQ1MyAyNTVMNDU0IDI1N0w0NTYgMjU3TDQ1NyAyNTlMNDYzIDI2Mkw0NzYgMjY1TDQ3NiAyNjZMNDgyIDI2Nkw0ODIgMjY3TDUwNSAyNjZMNTA1IDI2NUw1MTggMjYyTDUyNCAyNTlMNTI1IDI1N0w1MjcgMjU3TDUyOCAyNTVMNTMwIDI1NUw1NDAgMjQ2TDU0MCAyNDRMNTQzIDI0Mkw1NDMgMjQwTDU0NyAyMzZMNTUxIDIyOEw1NTQgMjE1TDU1NSAyMTVMNTU1IDIwOUw1NTYgMjA5TDU1NSAxNzlMNTU0IDE3OUw1NTQgMTc1TDU1MyAxNzVMNTUyIDE2OUw1NTAgMTY3TDU1MCAxNjRMNTQ3IDE1OEw1NDUgMTU3TDU0MyAxNTJMNTM5IDE0OUw1MzkgMTQ3TDUzNSAxNDNMNTMzIDE0M0w1MzAgMTM5TDUyOCAxMzlMNTI3IDEzN0w1MjUgMTM3TDUyNCAxMzVMNTE4IDEzMkw1MDUgMTI5TDUwNSAxMjhMNDk5IDEyOEw0OTkgMTI3TDQ3NiAxMjhMNDc2IDEyOUw0NjMgMTMyTDQ1OSAxMzRMNDU4IDEzNkw0NTQgMTM3TDQzOSAxNTFMNDM5IDE1M0w0MzUgMTU3TDQzMCAxNjdMNDMwIDE3MEw0MjggMTcyTDQyNiAxODZaTTYxNyAyMTZMNjE4IDIxNkw2MTggMjEwTDYxOSAyMTBMNjE5IDIwNkw2MjIgMjAxTDYyMiAxOThMNjI2IDE5MEw2MzAgMTg2TDYzMCAxODRMNjMzIDE4Mkw2MzMgMTgwTDY0NiAxNjlMNjU2IDE2NEw2NjIgMTYzTDY2MiAxNjJMNjcxIDE2MUw2NzEgMTYwTDY4OCAxNjBMNjg4IDE2MUw2OTcgMTYyTDcxMyAxNzBMNzI0IDE4MUw3MjQgOTBMNzU2IDkwTDc1NiAyOTNMNzI1IDI5M0w3MjUgMjc0TDcyMiAyNzdMNzIyIDI3OUw3MTQgMjg3TDcxMiAyODdMNzExIDI4OUw3MDMgMjkzTDcwMCAyOTNMNjk0IDI5Nkw2NzIgMjk3TDY3MiAyOTZMNjYyIDI5NUw2NjIgMjk0TDY1NiAyOTNMNjQ4IDI4OUw2NDcgMjg3TDY0MiAyODVMNjMwIDI3M0w2MzAgMjcxTDYyOCAyNzBMNjI4IDI2OEw2MjYgMjY3TDYyMyAyNjFMNjIzIDI1OEw2MjEgMjU2TDYxOSAyNDZMNjE4IDI0Nkw2MTggMjQwTDYxNyAyNDBaTTY1MCAyMTlMNjUwIDIzOEw2NTEgMjM4TDY1MSAyNDJMNjUyIDI0Mkw2NTUgMjUyTDY1NyAyNTNMNjU3IDI1NUw2NjMgMjYyTDY2NSAyNjJMNjY3IDI2NUw2NzMgMjY4TDY3NiAyNjhMNjc2IDI2OUw2OTMgMjcwTDY5MyAyNjlMNzAwIDI2OEw3MDYgMjY1TDcwNyAyNjNMNzA5IDI2M0w3MTkgMjUyTDcyMiAyNDZMNzIyIDI0M0w3MjQgMjQwTDcyNCAyMzRMNzI1IDIzNEw3MjUgMjIzTDcyNCAyMjNMNzIzIDIxNEw3MjEgMjEyTDcyMCAyMDdMNzE2IDIwM0w3MTYgMjAxTDcwNiAxOTJMNzAwIDE4OUw2OTcgMTg5TDY5NyAxODhMNjkzIDE4OEw2OTMgMTg3TDY3NiAxODhMNjY0IDE5NEw2NTYgMjAzTDY1MyAyMDlMNjUyIDIxNUw2NTEgMjE1TDY1MSAyMTlaTTc5MSAxMTdMNzkyIDExN0w3OTIgMTEzTDc5NCAxMDlMODAwIDEwM0w4MDcgMTAxTDgwNyAxMDBMODE3IDEwMEw4MTcgMTAxTDgyMyAxMDJMODMwIDEwOEw4MzIgMTE1TDgzMyAxMTVMODMzIDEyNEw4MzIgMTI0TDgzMCAxMzFMODIzIDEzN0w4MjAgMTM3TDgxNyAxMzlMODA3IDEzOUw4MDcgMTM4TDgwMCAxMzZMNzk0IDEzMEw3OTIgMTI2TDc5MiAxMjJMNzkxIDEyMlpNNzk2IDE2M0w4MjggMTYzTDgyOCAyOTNMNzk2IDI5M1pNODUyIDI3NUw4NTYgMjczTDg3MyAyNTZMODg0IDI2Nkw4OTIgMjcwTDkwMCAyNzFMOTAwIDI3Mkw5MTIgMjcyTDkxMiAyNzFMOTE5IDI3MEw5MjcgMjYyTDkyNyAyNTJMOTI0IDI0N0w5MTQgMjQyTDg5MiAyMzdMODkyIDIzNkw4NzYgMjMxTDg3NSAyMjlMODczIDIyOUw4NzEgMjI2TDg2OSAyMjZMODY2IDIyM0w4NjAgMjExTDg2MCAyMDVMODU5IDIwNUw4NjAgMTkxTDg2NyAxNzdMODczIDE3MUw4NzUgMTcxTDg3NiAxNjlMODc4IDE2OUw4NzkgMTY3TDg4MyAxNjVMODk2IDE2Mkw4OTYgMTYxTDkwMiAxNjFMOTAyIDE2MEw5MjAgMTYwTDkyMCAxNjFMOTMxIDE2Mkw5MzEgMTYzTDk0MCAxNjVMOTQyIDE2N0w5NDUgMTY3TDk0NiAxNjlMOTUwIDE3MEw5NTIgMTczTDk1NCAxNzNMOTU5IDE3OEw5NTkgMTgwTDk1MiAxODdMOTUwIDE4N0w5NDQgMTk0TDk0MiAxOTRMOTM5IDE5OEw5MjkgMTg5TDkyMyAxODZMOTIwIDE4Nkw5MjAgMTg1TDkxNiAxODVMOTE2IDE4NEw5MDUgMTg0TDkwNSAxODVMOTAwIDE4NUw4OTggMTg3TDg5NSAxODdMODkwIDE5Mkw4OTAgMTk2TDg4OSAxOTZMODkwIDIwM0w4OTQgMjA4TDkwNyAyMTJMOTA3IDIxM0w5MTEgMjEzTDkxMSAyMTRMOTE1IDIxNEw5MTUgMjE1TDkxOSAyMTVMOTE5IDIxNkw5MjMgMjE2TDkyMyAyMTdMOTM1IDIyMEw5NDMgMjI0TDk0NSAyMjdMOTQ3IDIyN0w5NTMgMjMzTDk1MyAyMzVMOTU1IDIzNkw5NTggMjQyTDk1OSAyNjNMOTU4IDI2M0w5NTggMjY3TDk1NyAyNjdMOTU3IDI3MEw5NTMgMjc4TDk0MyAyODhMOTMzIDI5M0w5MzAgMjkzTDkzMCAyOTRMOTI2IDI5NEw5MjIgMjk2TDkxNSAyOTZMOTE1IDI5N0w4OTYgMjk3TDg5NiAyOTZMODg1IDI5NUw4ODUgMjk0TDg3MyAyOTFMODY1IDI4N0w4NjEgMjgzTDg1OSAyODNaTTk4MCAyMTlMOTgxIDIxOUw5ODMgMjA1TDk4NSAyMDNMOTg1IDIwMEw5OTAgMTkwTDEwMDIgMTc2TDEwMDQgMTc2TDEwMTAgMTcwTDEwMjAgMTY1TDEwMjkgMTYzTDEwMjkgMTYyTDEwNDAgMTYxTDEwNDAgMTYwTDEwNTcgMTYwTDEwNTcgMTYxTDEwNjggMTYyTDEwNjggMTYzTDEwNzQgMTY0TDEwODQgMTY5TDEwOTggMTgyTDEwOTggMTg0TDExMDAgMTg1TDExMDEgMTg5TDExMDQgMTkyTDExMDQgMTk1TDExMDYgMTk3TDExMDYgMjAwTDExMDkgMjA2TDExMTAgMjE4TDExMTEgMjE4TDExMTEgMjM4TDEwMTIgMjM4TDEwMTMgMjQ1TDEwMTQgMjQ1TDEwMTQgMjQ4TDEwMTcgMjU0TDEwMjYgMjYzTDEwMjggMjYzTDEwMjkgMjY1TDEwMzMgMjY3TDEwNDMgMjY5TDEwNDMgMjcwTDEwNjIgMjY5TDEwNjIgMjY4TDEwNjggMjY3TDEwNzEgMjY0TDEwNzUgMjYzTDEwODMgMjU0TDEwODUgMjU0TDEwODYgMjU2TDEwODggMjU2TDEwOTEgMjYwTDEwOTMgMjYwTDEwOTYgMjY0TDEwOTggMjY0TDExMDEgMjY4TDExMDUgMjcwTDExMDQgMjczTDEwOTMgMjg0TDEwOTEgMjg0TDEwODkgMjg3TDEwNzcgMjkzTDEwNjYgMjk1TDEwNjYgMjk2TDEwNTkgMjk2TDEwNTkgMjk3TDEwMzMgMjk2TDEwMzMgMjk1TDEwMjIgMjkzTDEwMDggMjg2TDEwMDIgMjgwTDEwMDAgMjgwTDk5NSAyNzVMOTk1IDI3M0w5OTIgMjcxTDk5MiAyNjlMOTkwIDI2OEw5OTAgMjY2TDk4OCAyNjVMOTg1IDI1OUw5ODIgMjQ2TDk4MSAyNDZaTTEwMTIgMjEzTDEwMTIgMjE1TDEwNzkgMjE1TDEwNzggMjA1TDEwNzIgMTkzTDEwNjggMTkxTDEwNjYgMTg4TDEwNTkgMTg2TDEwNTkgMTg1TDEwNTQgMTg1TDEwNTQgMTg0TDEwMzcgMTg1TDEwMzcgMTg2TDEwMzQgMTg2TDEwMjYgMTkwTDEwMTcgMTk5TDEwMTQgMjA1TDEwMTQgMjA4TDEwMTMgMjA4TDEwMTMgMjEzWk0xMTQxIDE2M0wxMTc0IDE2M0wxMTc0IDI0NkwxMTc1IDI0NkwxMTc1IDI1MkwxMTc2IDI1MkwxMTc2IDI1NUwxMTc5IDI2MUwxMTg1IDI2N0wxMTg5IDI2OUwxMTkzIDI2OUwxMTkzIDI3MEwxMjA0IDI3MEwxMjA0IDI2OUwxMjA4IDI2OUwxMjE0IDI2NkwxMjE2IDI2M0wxMjIwIDI2MUwxMjI3IDI0N0wxMjI3IDI0M0wxMjI4IDI0M0wxMjI4IDE2M0wxMjYxIDE2M0wxMjYxIDI5M0wxMjMwIDI5M0wxMjMwIDI3M0wxMjI4IDI3NEwxMjI0IDI4MkwxMjIwIDI4NkwxMjE4IDI4NkwxMjE2IDI4OUwxMjE0IDI4OUwxMjEzIDI5MUwxMjA1IDI5NUwxMTk2IDI5NkwxMTk2IDI5N0wxMTgxIDI5N0wxMTgxIDI5NkwxMTcyIDI5NUwxMTYyIDI5MEwxMTYxIDI4OEwxMTU5IDI4OEwxMTUyIDI4MUwxMTUyIDI3OUwxMTUwIDI3OEwxMTUwIDI3NkwxMTQ4IDI3NUwxMTQ2IDI3MUwxMTQ2IDI2OEwxMTQzIDI2MkwxMTQzIDI1N0wxMTQyIDI1N0wxMTQyIDI0OUwxMTQxIDI0OVpNMTI5OSAxNjNMMTMzMCAxNjNMMTMzMCAxODNMMTMzMiAxODJMMTMzNCAxNzdMMTM0MyAxNjhMMTM0NSAxNjhMMTM0NiAxNjZMMTM1MiAxNjNMMTM2MyAxNjFMMTM2MyAxNjBMMTM3OSAxNjBMMTM3OSAxNjFMMTM4NCAxNjFMMTM4NCAxNjJMMTM5MyAxNjRMMTM5NCAxNjZMMTM5OCAxNjdMMTQwOCAxNzdMMTQxMSAxODNMMTQxNiAxNzhMMTQxNiAxNzZMMTQyNiAxNjdMMTQzNCAxNjNMMTQ0MSAxNjJMMTQ0MSAxNjFMMTQ2MiAxNjBMMTQ2MiAxNjFMMTQ2OCAxNjFMMTQ2OCAxNjJMMTQ3MSAxNjJMMTQ3MSAxNjNMMTQ3NCAxNjNMMTQ4MCAxNjZMMTQ5NCAxODBMMTQ5OCAxODhMMTUwMCAxOThMMTUwMSAxOThMMTUwMSAyMDVMMTUwMiAyMDVMMTUwMiAyOTNMMTQ3MCAyOTNMMTQ2OSAyMDdMMTQ2OCAyMDdMMTQ2NyAyMDBMMTQ2NSAxOTZMMTQ2MiAxOTRMMTQ2MiAxOTJMMTQ1MSAxODZMMTQ0MCAxODZMMTQ0MCAxODdMMTQzNiAxODdMMTQzMCAxOTBMMTQyNCAxOTZMMTQxOCAyMDhMMTQxOCAyMTNMMTQxNyAyMTNMMTQxNyAyOTNMMTM4NCAyOTNMMTM4NCAyMDZMMTM4MyAyMDZMMTM4MyAyMDJMMTM3OSAxOTRMMTM3NCAxODlMMTM3MCAxODdMMTM2NiAxODdMMTM2NiAxODZMMTM1NSAxODZMMTM1NSAxODdMMTM1MSAxODdMMTM0NSAxOTBMMTMzNyAxOTlMMTMzNCAyMDlMMTMzMyAyMDlMMTMzMyAyMTRMMTMzMiAyMTRMMTMzMiAyOTNMMTI5OSAyOTNaIi8+Cjwvc3ZnPgo=");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#100D0A}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.deck{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 22px 70px}
+.stage{position:relative;width:100%;max-width:1600px;aspect-ratio:16/9}
+.slide{position:absolute;top:0;left:0;width:1600px;height:900px;border-radius:28px;overflow:hidden;
+ transform-origin:top left;background-color:#15110D;
+ box-shadow:0 18px 44px rgba(0,0,0,.45)}
+
+/* ---------- fondos limpios (sin fotos, sin manchas) ---------- */
+.slide[data-bg="ember"]{background-image:
+ radial-gradient(118% 96% at 10% 6%,rgba(235,203,158,.22) 0%,rgba(235,203,158,0) 56%),
+ radial-gradient(92% 82% at 90% 94%,rgba(196,132,72,.17) 0%,rgba(196,132,72,0) 62%),
+ linear-gradient(158deg,#2B2218 0%,#1B1610 56%,#120F0B 100%)}
+.slide[data-bg="slate"]{background-image:
+ radial-gradient(104% 92% at 86% 8%,rgba(140,230,188,.11) 0%,rgba(140,230,188,0) 60%),
+ radial-gradient(112% 100% at 8% 96%,rgba(235,203,158,.14) 0%,rgba(235,203,158,0) 63%),
+ linear-gradient(153deg,#23211C 0%,#16171A 60%,#101114 100%)}
+.slide[data-bg="amber"]{background-image:
+ radial-gradient(132% 92% at 50% 0%,rgba(245,204,128,.17) 0%,rgba(245,204,128,0) 58%),
+ radial-gradient(90% 80% at 96% 100%,rgba(120,90,60,.20) 0%,rgba(120,90,60,0) 60%),
+ linear-gradient(172deg,#2B2116 0%,#1C1710 52%,#141010 100%)}
+.slide[data-bg="pine"]{background-image:
+ radial-gradient(104% 88% at 14% 10%,rgba(140,230,188,.10) 0%,rgba(140,230,188,0) 56%),
+ radial-gradient(122% 100% at 93% 90%,rgba(235,203,158,.12) 0%,rgba(235,203,158,0) 62%),
+ linear-gradient(148deg,#1C221F 0%,#141815 56%,#0E100F 100%)}
+.slide[data-bg="night"]{background-image:
+ radial-gradient(122% 96% at 79% 12%,rgba(235,203,158,.16) 0%,rgba(235,203,158,0) 58%),
+ radial-gradient(96% 86% at 6% 92%,rgba(150,110,80,.14) 0%,rgba(150,110,80,0) 62%),
+ linear-gradient(202deg,#251E17 0%,#181310 60%,#110E0B 100%)}
+.slide::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
+ radial-gradient(120% 88% at 50% 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,.26) 100%)}
+.pad{position:relative;z-index:3;height:100%;padding:64px 72px;display:flex;flex-direction:column}
+
+/* ---------- tarjetas ---------- */
+.glass{position:relative;border-radius:24px;
+ background:linear-gradient(158deg,rgba(255,255,255,.085) 0%,rgba(255,255,255,.038) 54%,rgba(255,255,255,.062) 100%);
+ border:1px solid rgba(255,255,255,.135);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.11)}
+.glass,.glass *{color:var(--w)}
+.gc{position:relative;z-index:2;padding:30px 34px;height:100%;display:flex;flex-direction:column}
+
+/* ---------- tipografía ---------- */
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1.big{font-size:72px;line-height:1.04;font-weight:300;letter-spacing:-.018em;color:#fff}
+h2{font-size:55px;line-height:1.06;font-weight:300;letter-spacing:-.016em;color:#fff}
+h2.sm{font-size:47px}
+.lede{font-size:21px;line-height:1.48;font-weight:400;color:var(--w70);max-width:1080px}
+.lede.wide{max-width:1360px}
+.foot{font-size:16px;line-height:1.45;color:var(--w50)}
+.ct{font-size:29px;font-weight:400;letter-spacing:-.01em;line-height:1.15}
+.ct.sm{font-size:24px}
+.cl{font-size:13.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--w50)}
+.cd{font-size:18.5px;line-height:1.48;color:var(--w85)}
+.cd.sm{font-size:17px;line-height:1.46}
+
+/* auto-ajuste si una tarjeta se queda sin espacio */
+.glass.fit1 .cd{font-size:17.5px}.glass.fit1 .cd.sm{font-size:16px}
+.glass.fit1 ul.dots li{font-size:17.5px}.glass.fit1 ul.dots.sm li{font-size:16px}
+.glass.fit1 ul.txt li{font-size:16px}.glass.fit1 ul.txt.tight li{font-size:15px}
+.glass.fit1 .ct{font-size:27px}.glass.fit1 .ct.sm{font-size:22.5px}
+.glass.fit2 .cd{font-size:16.5px}.glass.fit2 .cd.sm{font-size:15px}
+.glass.fit2 ul.dots li{font-size:16.5px}.glass.fit2 ul.dots.sm li{font-size:15px}
+.glass.fit2 ul.txt li{font-size:15px}.glass.fit2 ul.txt.tight li{font-size:14.5px}
+.glass.fit2 .ct{font-size:25px}.glass.fit2 .ct.sm{font-size:21px}
+.glass.fit2 ul.dots{gap:9px}.glass.fit2 ul.txt{gap:11px}
+
+.note{font-size:14px;line-height:1.4;color:var(--w50);margin-top:12px}
+.dur{margin-top:18px;padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.16);
+ background:rgba(255,255,255,.06)}
+.durval{font-size:30px;font-weight:300;letter-spacing:-.015em;line-height:1.1;margin-top:6px;color:#fff}
+.step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.stepn{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:600;color:var(--gold);border:1px solid rgba(235,203,158,.5);
+ background:rgba(235,203,158,.12)}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 12px;border-radius:999px;
+ font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;
+ border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+.chip i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.g{color:var(--green);border-color:rgba(140,230,188,.45);background:rgba(140,230,188,.11)}
+.chip.a{color:var(--amber);border-color:rgba(245,204,128,.45);background:rgba(245,204,128,.11)}
+
+/* listas */
+ul.dots{list-style:none;display:flex;flex-direction:column;gap:12px}
+ul.dots li{position:relative;padding-left:22px;font-size:18.5px;line-height:1.4;color:var(--w85)}
+ul.dots li::before{content:"";position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;
+ background:var(--gold)}
+ul.dots.sm li{font-size:17px;line-height:1.42;padding-left:20px}
+ul.dots.sm li::before{top:7px;width:5px;height:5px}
+ul.dots.xs{gap:10px}
+ul.dots.xs li{font-size:16px;line-height:1.4;padding-left:20px}
+ul.dots.xs li::before{top:7px;width:5px;height:5px}
+ul.txt{list-style:none;display:flex;flex-direction:column;gap:14px}
+ul.txt li{font-size:17px;line-height:1.47;color:var(--w85);padding-left:16px;border-left:2px solid rgba(235,203,158,.45)}
+ul.txt.tight{gap:12px}
+ul.txt.tight li{font-size:16px;line-height:1.45}
+.hi{color:var(--gold)}
+.ast{font-size:.42em;font-weight:400;color:var(--gold);vertical-align:super;line-height:0;margin-left:2px}
+.price{font-size:64px;font-weight:250;letter-spacing:-.03em;line-height:1}
+.num{font-size:48px;font-weight:200;line-height:1;color:#fff;letter-spacing:-.02em;opacity:.92}
+.rule{height:1px;background:linear-gradient(90deg,rgba(255,255,255,.34),rgba(255,255,255,0))}
+.row{display:flex;gap:22px}
+.grow{flex:1;min-height:0}
+.logo{position:absolute;top:60px;left:72px;z-index:5;width:232px;height:57px;
+ background:var(--logo) left center/contain no-repeat}
+.pn{position:absolute;z-index:4;right:34px;bottom:26px;font-size:13.5px;letter-spacing:.16em;color:var(--w50)}
+.brand{position:absolute;z-index:4;left:34px;bottom:26px;font-size:13.5px;letter-spacing:.22em;
+ text-transform:uppercase;color:var(--w50)}
+
+/* barra de herramientas */
+.bar{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;gap:8px}
+.bar button{font:600 13px/1 -apple-system,"Helvetica Neue",sans-serif;letter-spacing:.04em;color:#3a3128;
+ background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.10);border-radius:999px;padding:11px 17px;
+ cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.30)}
+.bar button:hover{background:#fff}
+.bar button.on{background:#EBCB9E;color:#2b2218;border-color:#EBCB9E}
+.hint{position:fixed;left:18px;bottom:18px;z-index:99;display:none;align-items:center;gap:10px;
+ font:500 13px/1.35 -apple-system,"Helvetica Neue",sans-serif;color:#4a4137;background:rgba(255,255,255,.94);
+ border:1px solid rgba(0,0,0,.10);border-radius:14px;padding:11px 15px;max-width:430px;
+ box-shadow:0 6px 18px rgba(0,0,0,.30)}
+body.editing .hint{display:flex}
+body.editing [data-e]{cursor:text}
+body.editing [data-e]:hover{outline:1px dashed rgba(255,255,255,.45);outline-offset:3px;border-radius:3px}
+body.editing [data-e]:focus{outline:2px solid rgba(140,230,188,.85);outline-offset:3px;border-radius:3px}
+body.editing .glass.over{box-shadow:0 0 0 2px rgba(255,120,110,.95),inset 0 1px 0 rgba(255,255,255,.11)}
+.over-warn{position:fixed;right:18px;bottom:112px;z-index:99;display:none;font:600 12px/1.3 -apple-system,sans-serif;
+ color:#8a2b22;background:rgba(255,226,222,.97);border:1px solid rgba(138,43,34,.28);border-radius:12px;
+ padding:10px 14px;max-width:300px}
+body.editing .over-warn.show{display:block}
+.saved{position:fixed;right:18px;bottom:70px;z-index:99;font:600 12px/1 -apple-system,sans-serif;
+ letter-spacing:.06em;text-transform:uppercase;color:#2f6b4f;background:rgba(214,245,229,.96);
+ border:1px solid rgba(47,107,79,.25);border-radius:999px;padding:9px 14px;opacity:0;transition:opacity .25s}
+.saved.show{opacity:1}
+
+@media print{
+ @page{size:1600px 900px;margin:0}
+ html,body{background:#fff}
+ .deck{padding:0;gap:0}
+ .bar,.hint,.saved,.over-warn{display:none!important}
+ [data-e]{outline:none!important}
+ .stage{aspect-ratio:auto;width:1600px;height:900px;max-width:none;break-inside:avoid;page-break-inside:avoid;
+  break-after:page;page-break-after:always}
+ .stage:last-child{break-after:auto;page-break-after:auto}
+ .slide{transform:none!important;box-shadow:none;border-radius:0}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style></head>
+<body>
+<div class="bar"><button id="btnEdit" onclick="setEdit(!document.body.classList.contains('editing'))">✎ Editar texto</button><button onclick="reset()">Restablecer</button><button onclick="download()">Descargar HTML</button><button onclick="window.print()">Exportar a PDF</button></div><div class="hint">Haz clic en cualquier texto y escribe. Enter dentro de una lista crea un punto nuevo; borrar la línea entera lo elimina. Se guarda solo.</div><div class="over-warn" id="overwarn"></div><div class="saved" id="saved">Guardado</div>
+<div class="deck">
+
+<!-- 01 · Portada -->
+<section class="stage"><div class="slide" data-bg="ember">
+<div class="pad" style="justify-content:center">
+  <div class="logo"></div>
+  <div class="glass" style="width:1000px">
+    <div class="gc" style="padding:52px 56px">
+    <div class="eyebrow">Propuesta de colaboración</div>
+    <h1 class="big" style="margin-top:22px">Optimización web<br>&amp; sistema de pedidos QR</h1>
+    <div class="rule" style="margin:34px 0 26px"></div>
+    <div class="cd" style="font-size:18px">Preparado por <span class="hi">Odiseum</span> para Bernabéu Market</div>
+    <div class="cd" style="font-size:15px;color:var(--w50);margin-top:6px">26 de julio de 2026</div>
+  </div></div>
+</div></div></section>
+
+<!-- 02 · Contexto -->
+<section class="stage"><div class="slide" data-bg="slate">
+<div class="pad">
+  <div class="eyebrow">Contexto</div><h2 style="margin-top:14px">Contexto y objetivo del proyecto</h2>
+  <p class="lede" style="margin-top:18px">Bernabéu Market requiere de dos proyectos para evolucionar su presencia digital y la experiencia de sus visitantes. Para ello, presentamos esta propuesta.</p>
+  <div class="row grow" style="margin-top:36px;align-items:stretch">
+    <div class="glass grow"><div class="gc"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px"><div class="cl">Proyecto 1</div><div class="chip g"><i></i>En curso</div></div><div class="ct" style="margin-top:18px">Optimización web</div><div class="cl" style="margin-top:22px;color:var(--gold)">El proyecto</div><ul class="dots sm" style="margin-top:14px"><li>Auditoría y optimización técnica</li><li>Mejoras de diseño</li><li>Optimización SEO</li><li>Presencia en IA (GEO)</li></ul><div class="cl" style="margin-top:24px;color:var(--gold)">La continuidad</div><ul class="dots sm" style="margin-top:14px"><li>Mantenimiento continuo</li></ul></div></div>
+    <div class="glass grow"><div class="gc"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px"><div class="cl">Proyecto 2</div><div class="chip a"><i></i>Pendiente</div></div><div class="ct" style="margin-top:18px">Sistema de pedidos por QR</div><div class="cl" style="margin-top:22px;color:var(--gold)">El proyecto</div><ul class="dots sm" style="margin-top:14px"><li>El cliente escanea un QR</li><li>Elige el kiosko en el que pedir y llena el carrito</li><li>Efectúa el pago</li><li>El pedido se envía al TPV del comercio</li><li>Es notificado cuando el pedido está listo</li></ul></div></div>
+  </div>
+  <p class="foot" style="margin-top:26px">Esta propuesta desarrolla el <strong style="font-weight:600;color:var(--w70)">Proyecto 1</strong> en detalle; el Proyecto 2 se introduce como siguiente paso, sujeto a un análisis de viabilidad técnica.</p>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">02 / 11</div></div></section>
+
+<!-- 03 · Resumen por fases -->
+<section class="stage"><div class="slide" data-bg="amber">
+<div class="pad">
+  <div class="eyebrow">Proyecto 1</div><h2 style="margin-top:14px">Resumen por fases</h2>
+  <div class="row grow" style="margin-top:42px;align-items:stretch;gap:18px">
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">01</div><div class="ct sm" style="margin-top:18px;min-height:62px">Auditoría y optimización técnica</div><div class="rule" style="margin:16px 0 14px"></div><p class="cd sm" style="flex:1">Analizamos el estado actual de la web y aplicamos las correcciones detectadas para que funcione mejor, más rápido y de forma más segura.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">02</div><div class="ct sm" style="margin-top:18px;min-height:62px">Mejoras de diseño</div><div class="rule" style="margin:16px 0 14px"></div><p class="cd sm" style="flex:1">Corregimos errores puntuales y mejoramos la navegación, manteniendo intacta la identidad visual.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">03</div><div class="ct sm" style="margin-top:18px;min-height:62px">SEO</div><div class="rule" style="margin:16px 0 14px"></div><p class="cd sm" style="flex:1">Reforzamos cómo Google encuentra, entiende y posiciona Bernabéu Market.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">04</div><div class="ct sm" style="margin-top:18px;min-height:62px">Presencia en IA (GEO)</div><div class="rule" style="margin:16px 0 14px"></div><p class="cd sm" style="flex:1">Campo experimental en fase de prueba, incluido sin coste y con seguimiento continuo en el mantenimiento.</p><div class="chip g" style="margin-top:16px;align-self:flex-start"><i></i>Sin coste</div></div></div>
+  </div>
+  <p class="foot" style="margin-top:28px">Cada fase se detalla en las páginas siguientes.</p>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">03 / 11</div></div></section>
+
+<!-- 04 · Fase 1 -->
+<section class="stage"><div class="slide" data-bg="pine">
+<div class="pad">
+  <div class="eyebrow">Fase 1</div><h2 class="sm" style="margin-top:14px">Auditoría y optimización técnica</h2>
+  <p class="lede wide" style="margin-top:18px">Primero medimos, después corregimos: el alcance de cada mejora se ajusta a los hallazgos de la auditoría.</p>
+  <div class="row grow" style="margin-top:30px;align-items:stretch">
+    <div style="width:54%;display:flex;flex-direction:column;gap:18px">
+      <div class="glass grow"><div class="gc"><div class="row" style="gap:30px"><div style="flex:1"><div class="cl" style="color:var(--gold)">Qué auditamos</div><ul class="dots sm" style="margin-top:16px"><li>Velocidad de carga y rendimiento</li><li>Seguridad</li><li>Estructura SEO técnica</li><li>Comportamiento en dispositivos móviles</li><li>Herramientas de medición analítica instaladas</li><li>Cumplimiento legal y privacidad</li></ul></div><div style="flex:1"><div class="cl" style="color:var(--gold)">Qué optimizamos</div><ul class="dots sm" style="margin-top:16px"><li>Mejora de tiempos de carga</li><li>Refuerzo de seguridad</li><li>Optimización de imágenes y recursos</li><li>Actualización de componentes desactualizados</li><li>Ajustes de estructura para buscadores</li><li>Mejora de la respuesta del servidor</li></ul></div></div></div></div>
+      <div class="glass" style="flex:none"><div class="gc"><div style="display:flex;align-items:center;gap:22px"><div class="chip"><i style="color:var(--gold)"></i>Entregable</div><div class="cd sm">Informe completo de auditoría y plan de mejora.</div></div></div></div>
+    </div>
+    <div class="glass grow"><div class="gc"><div class="cl">Primera revisión</div><ul class="txt tight" style="margin-top:18px"><li>Más de <span class="hi">30 hojas de estilo</span> y <span class="hi">50 scripts</span> se cargan por separado en cada visita, y el servidor tarda más de 2 segundos en responder — sin aprovechar el sistema de caché que el propio hosting ya ofrece.</li><li>De las 43 imágenes de la portada, <span class="hi">solo 1</span> usa carga diferida ("lazy loading"), lo que penaliza el tiempo de carga percibido, sobre todo en móvil.</li><li>Detectamos <span class="hi">plugins en versión "beta"</span> activos en producción — software experimental funcionando en la web pública, con el riesgo de estabilidad que conlleva.</li><li><strong style="font-weight:600">Punto a favor:</strong> las imágenes ya usan un formato ligero (WebP) y la analítica (Google Analytics / Tag Manager) está bien instalada y funcionando.</li></ul></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">04 / 11</div></div></section>
+
+<!-- 05 · Fase 2 -->
+<section class="stage"><div class="slide" data-bg="night">
+<div class="pad">
+  <div class="eyebrow">Fase 2</div><h2 style="margin-top:14px">Mejoras de diseño</h2>
+  <p class="lede" style="margin-top:18px">No es un rediseño completo de la web — mejoramos y pulimos lo que ya existe, con la imagen de marca actual.</p>
+  <div class="row grow" style="margin-top:34px;align-items:stretch">
+    <div class="glass" style="width:49%"><div class="gc"><div class="cl">Lo que haremos</div><ul class="dots" style="margin-top:22px"><li>Mejora de la navegación, especialmente en móvil</li><li>Corrección de errores estéticos</li><li>Revisión de coherencia visual entre secciones</li><li>Ajuste de espaciados y composición de las secciones</li><li>Rediseño de elementos visuales (plano de distribución, imágenes 3D de los espacios, etc.)</li><li>Revisión de consistencia de botones y elementos interactivos</li></ul></div></div>
+    <div class="glass grow"><div class="gc"><div class="cl">Primera revisión</div><ul class="txt" style="margin-top:22px"><li>El <span class="hi">plano 3D</span> de distribución del mercado y de los boxes es inconsistente y difícil de leer.</li><li>Falta de <span class="hi">coherencia visual entre secciones</span>: las páginas de cada box usan textos y márgenes de distintos tamaños.</li><li>Falta de <span class="hi">consistencia en botones</span> y elementos interactivos.</li><li>Los elementos visuales de las imágenes de cada box <span class="hi">tapan el centro de las fotos</span>.</li><li>No hay sección de <span class="hi">FAQs</span>.</li></ul></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">05 / 11</div></div></section>
+
+<!-- 06 · Fases 3 y 4 -->
+<section class="stage"><div class="slide" data-bg="ember">
+<div class="pad">
+  <div class="eyebrow">Fases 3 y 4</div><h2 class="sm" style="margin-top:14px">SEO y presencia en IA</h2>
+  <div class="row grow" style="margin-top:28px;align-items:stretch">
+    <div style="width:52%;display:flex;flex-direction:column;gap:18px">
+      <div class="glass" style="flex:none"><div class="gc"><div class="cl">Lo que haremos</div><ul class="dots xs" style="margin-top:16px"><li>Análisis del posicionamiento en buscadores</li><li>Refuerzo de la estructura técnica actual</li><li>Optimización de contenidos y palabras clave</li><li>Mejora de la presencia local (Google Business Profile)</li><li>Mejora de la estructura de enlaces internos (interlinking)</li><li>Creación de sección de FAQs para mejora del GEO</li></ul></div></div>
+      <div class="glass grow"><div class="gc"><div class="cl">Primera revisión</div><ul class="txt tight" style="margin-top:16px"><li>La página de contacto muestra en buscadores el título y la descripción de <span class="hi">otra página</span> (la de eventos).</li><li>La portada tiene <span class="hi">dos encabezados principales (H1)</span> en vez de uno, lo que diluye la señal para Google.</li><li><span class="hi">41 de las 43 imágenes</span> de la portada no tienen texto alternativo.</li><li>No hay ficha de datos estructurados ("LocalBusiness") con dirección, horario y ubicación.</li><li>Falta de sección de <span class="hi">FAQs</span>.</li></ul></div></div>
+    </div>
+    <div class="grow" style="display:flex"><div class="glass grow"><div class="gc"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px"><div class="cl">Fase 4 · Presencia en IA (GEO)</div><div class="chip g"><i></i>Sin coste</div></div><p class="cd sm" style="margin-top:18px">Preparamos la web para que asistentes de IA como <span class="hi">ChatGPT, Claude, Gemini o Perplexity</span> puedan encontrar y recomendar Bernabéu Market cuando alguien les pregunte dónde comer cerca del Bernabéu.</p><div class="rule" style="margin:20px 0 18px"></div><ul class="dots sm"><li>Contenido claro y bien estructurado para que los modelos de IA lo entiendan fácilmente.</li><li>Presencia consistente en las fuentes que estos asistentes consultan (Google Business Profile, directorios, reseñas).</li><li>Seguimiento de cómo y cuándo aparece Bernabéu Market en las respuestas de estos asistentes.</li><li>Optimización a corto plazo y ajuste continuo a medida que este campo evolucione — sin garantía de resultados, por ser tecnología muy reciente.</li><li><span class="hi">Gran potencial de mejora a corto plazo</span> debido al estado actual de la web.</li></ul></div></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">06 / 11</div></div></section>
+
+<!-- 07 · Mantenimiento -->
+<section class="stage"><div class="slide" data-bg="slate">
+<div class="pad">
+  <div class="eyebrow">Después de la fase 4</div><h2 class="sm" style="margin-top:14px">Mantenimiento mensual</h2>
+  <p class="lede" style="margin-top:18px">Una vez lanzadas las 4 fases, cuidamos de la web de forma continua para que lo conseguido no solo no se pierda con el tiempo, sino que además esté en constante mejora.</p>
+  <div class="row grow" style="margin-top:32px;align-items:stretch">
+    <div class="glass" style="width:47%"><div class="gc"><div class="cl">Qué incluye</div><ul class="dots sm" style="margin-top:18px"><li>Actualizaciones de seguridad y componentes técnicos</li><li>Mejora continua de SEO</li><li>Copias de seguridad periódicas</li><li>Cambios de contenido a petición del cliente</li><li>Seguimiento y ajuste continuo de GEO</li><li>Soporte ante incidencias con atención en menos de 24 h</li><li>Creación o modificación de nuevos boxes</li><li>Análisis de métricas en Google Search Console y Google Analytics</li><li>Contacto directo con responsable técnico de nuestro equipo</li></ul></div></div>
+    <div class="glass grow"><div class="gc"><div class="cl">Factores clave del mantenimiento</div><ul class="txt" style="margin-top:20px"><li>La web ya arrastra <span class="hi">plugins en versión beta y sin actualizar</span> — sin mantenimiento activo, este tipo de deuda técnica solo crece con el tiempo.</li><li>Mantener la web es lo que evita que una auditoría como esta haya que repetirla desde cero dentro de un año.</li><li>El posicionamiento SEO y GEO <span class="hi">no es permanente</span>: en cuanto se deja de trabajar se va perdiendo, y otros mercados gastronómicos de Madrid pueden ir recuperando el terreno poco a poco.</li></ul></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">07 / 11</div></div></section>
+
+<!-- 08 · Inversión y plazos -->
+<section class="stage"><div class="slide" data-bg="amber">
+<div class="pad">
+  <div class="eyebrow">Propuesta económica</div><h2 class="sm" style="margin-top:14px">Inversión y plazos</h2>
+  <div class="row grow" style="margin-top:32px;align-items:stretch;gap:18px">
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="cl">Pago único · Fases 1 a 4</div><div style="display:flex;align-items:baseline;gap:12px;margin-top:14px"><div class="price">1.900 €<sup class="ast">*</sup></div><div class="cd" style="color:var(--w50)">+ IVA</div></div><div class="note">* Sujeto a que se acepte el Proyecto 2. Si no, 2.900 € + IVA.</div><div class="dur"><div class="cl">Duración total estimada</div><div class="durval">3 semanas</div></div><div class="rule" style="margin:20px 0 14px"></div><div class="cl" style="margin-bottom:14px">Incluye</div><ul class="dots sm"><li>Reuniones técnicas necesarias</li><li>Auditoría completa</li><li>Optimización técnica</li><li>Mejoras de diseño</li><li>SEO + presencia en IA (GEO)</li><li>Reuniones de validación</li></ul></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="cl">Mantenimiento mensual · desde Fase 4</div><div style="display:flex;align-items:baseline;gap:12px;margin-top:14px"><div class="price">290 €</div><div class="cd" style="color:var(--w50)">/ mes + IVA</div></div><div class="chip" style="margin-top:16px;align-self:flex-start"><i style="color:var(--gold)"></i>Comienza al finalizar la Fase 4</div><div class="rule" style="margin:20px 0 14px"></div><div class="cl" style="margin-bottom:14px">Incluye</div><ul class="dots xs"><li>Actualizaciones de seguridad y componentes técnicos</li><li>Revisión y optimización continua de SEO de contenidos publicados por Bernabéu Market</li><li>Actualización y modificación de contenidos publicados</li><li>Seguimiento y ajuste continuo de GEO</li><li>Soporte ante incidencias con atención en menos de 24 h</li><li>Análisis de métricas en Google Search Console y Google Analytics</li><li>Contacto directo con responsable técnico de nuestro equipo</li></ul></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="cl">Siguientes pasos</div><p class="cd sm" style="margin-top:14px;color:var(--w70)">Cómo lo ponemos en marcha una vez aceptada la propuesta.</p><div class="rule" style="margin:20px 0 18px"></div><div class="step"><div class="stepn">1</div><div class="cd sm">Reunión de arranque con nuestro equipo técnico</div></div><div class="step"><div class="stepn">2</div><div class="cd sm">Nos facilitáis los accesos (WordPress, hosting, Analytics y Google Business Profile)</div></div><div class="step"><div class="stepn">3</div><div class="cd sm">Empezamos con la Fase 1</div></div><div style="flex:1"></div><p class="cd sm" style="color:var(--w50)">Los accesos concretos y cualquier cuestión pendiente se cierran en esa misma reunión de arranque.</p></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">08 / 11</div></div></section>
+
+<!-- 09 · Proyecto 2 -->
+<section class="stage"><div class="slide" data-bg="pine">
+<div class="pad">
+  <div class="eyebrow">Proyecto 2 · Siguiente paso</div><h2 class="sm" style="margin-top:14px">Sistema de pedidos por QR</h2>
+  <p class="lede wide" style="margin-top:18px">Cada mesa del mercado tendría un QR que permite pedir a cualquiera de los 19 locales desde el móvil, con el pedido llegando directo al restaurante correspondiente.</p>
+  <div class="row" style="margin-top:28px;align-items:stretch;gap:18px">
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num" style="font-size:34px">01</div><p class="cd sm" style="margin-top:14px">El cliente escanea el QR de su mesa</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num" style="font-size:34px">02</div><p class="cd sm" style="margin-top:14px">Accede a una landing con los establecimientos del mercado</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num" style="font-size:34px">03</div><p class="cd sm" style="margin-top:14px">Pide al local que quiera — llega directo a su sistema (TPV HIOPOS)</p></div></div>
+  </div>
+  <div class="grow" style="display:flex;margin-top:20px">
+    <div class="glass grow"><div class="gc"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px"><div class="cl">Punto pendiente de confirmar</div><div class="chip a"><i></i>Requiere reunión técnica con HIOPOS</div></div><p class="cd sm" style="margin-top:16px">El alcance técnico y el coste dependen de si <span class="hi">HIOPOS</span> (el TPV que usan los 19 locales) tiene API o webhooks abiertos.</p><ul class="dots sm" style="margin-top:16px;gap:10px"><li><strong style="font-weight:600">Si la tiene:</strong> integración directa, más simple y económica — el pedido entra desde las landings de los boxes al sistema HIOPOS de cada box.</li><li><strong style="font-weight:600">Si no la tiene · opción 1:</strong> hablamos con HIOPOS para que ellos desarrollen la integración que falta — nuestro presupuesto y la simplicidad del desarrollo se mantienen igual, aunque HIOPOS probablemente os traslade un pequeño presupuesto propio por esa integración.</li><li><strong style="font-weight:600">Si no la tiene · opción 2:</strong> el pedido llega por nuestra propia plataforma y el local lo introduce manualmente en HIOPOS — funciona, pero es menos eficiente y requeriría también mantenimiento de nuestra plataforma.</li></ul><div class="rule" style="margin:18px 0 14px"></div><p class="cd sm" style="color:var(--w50)">Si se acepta la propuesta del Proyecto 1, incluimos <span class="hi">sin coste adicional</span> el análisis completo de viabilidad técnica de este proyecto: reunión con HIOPOS, análisis de viabilidad y asesoramiento sobre las posibilidades de implementación.</p></div></div>
+  </div>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">09 / 11</div></div></section>
+
+<!-- 10 · Próximos pasos Proyecto 2 -->
+<section class="stage"><div class="slide" data-bg="night">
+<div class="pad">
+  <div class="eyebrow">Proyecto 2 · Arranque</div><h2 class="sm" style="margin-top:14px">Próximos pasos del Proyecto 2</h2>
+  <p class="lede" style="margin-top:18px">El Proyecto 2 no arranca con desarrollo, sino con una comprobación técnica. Este es el camino hasta poder presupuestarlo.</p>
+  <div class="row grow" style="margin-top:32px;align-items:stretch;gap:18px">
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">01</div><div class="ct sm" style="margin-top:16px;min-height:88px">Reunión con vuestro equipo técnico</div><div class="rule" style="margin:14px 0"></div><p class="cd sm" style="flex:1">Ponemos en común el planteamiento y resolvemos dudas antes de sentarnos con HIOPOS.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">02</div><div class="ct sm" style="margin-top:16px;min-height:88px">Reunión técnica con HIOPOS</div><div class="rule" style="margin:14px 0"></div><p class="cd sm" style="flex:1">Confirmamos si el TPV que usan los 19 locales tiene API o webhooks abiertos. De esa respuesta depende todo lo demás.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">03</div><div class="ct sm" style="margin-top:16px;min-height:88px">Análisis de viabilidad y asesoramiento</div><div class="rule" style="margin:14px 0"></div><p class="cd sm" style="flex:1">Evaluamos las opciones de implementación y os explicamos qué implica cada una. Sin coste si se acepta el Proyecto 1.</p></div></div>
+    <div class="glass grow" style="min-width:0"><div class="gc"><div class="num">04</div><div class="ct sm" style="margin-top:16px;min-height:88px">Alcance y presupuesto definitivos</div><div class="rule" style="margin:14px 0"></div><p class="cd sm" style="flex:1">Con el resultado del análisis cerramos el alcance técnico y el coste real del Proyecto 2.</p></div></div>
+  </div>
+  <p class="foot" style="margin-top:26px">Hasta completar el paso 2 no es posible dar un presupuesto cerrado del Proyecto 2, porque el alcance del desarrollo depende directamente de lo que permita HIOPOS.</p>
+</div><div class="brand">Odiseum · Bernabéu Market</div><div class="pn">10 / 11</div></div></section>
+
+<!-- 11 · Cierre -->
+<section class="stage"><div class="slide" data-bg="ember">
+<div class="pad" style="justify-content:center">
+  <div class="logo"></div>
+  <div class="glass" style="width:1000px">
+    <div class="gc" style="padding:52px 56px">
+    <div class="eyebrow">Gracias</div>
+    <h1 class="big" style="margin-top:22px">¿Empezamos?</h1>
+    <div class="rule" style="margin:34px 0 26px"></div>
+    <div class="cl" style="color:var(--gold)">Contacto</div>
+    <div class="ct" style="margin-top:10px">pau@odiseum.com</div>
+    <div class="cd" style="font-size:15px;color:var(--w50);margin-top:20px">Odiseum · Propuesta de colaboración para Bernabéu Market · 26 de julio de 2026</div>
+  </div></div>
+</div></div></section>
+
+</div>
+<script>
+function fit(){document.querySelectorAll('.stage').forEach(st=>{
+  st.querySelector('.slide').style.transform='scale('+(st.clientWidth/1600)+')';});}
+function audit(){
+  let bad=0;
+  document.querySelectorAll('.slide').forEach((sl,i)=>{
+    const p=sl.querySelector('.pad');
+    if(p&&p.scrollHeight>p.clientHeight+1){console.warn('OVERFLOW s'+(i+1)+' pad '+p.scrollHeight+'>'+p.clientHeight);bad++;}
+    sl.querySelectorAll('.gc').forEach((g,j)=>{if(g.scrollHeight>g.clientHeight+1){
+      console.warn('OVERFLOW s'+(i+1)+' card'+(j+1)+' '+g.scrollHeight+'>'+g.clientHeight);bad++;}});
+  });
+  console.log('AUDIT issues='+bad+' slides='+document.querySelectorAll('.slide').length);
+}
+window.addEventListener('resize',fit);
+window.addEventListener('beforeprint',()=>{document.querySelectorAll('.slide').forEach(s=>s.style.transform='none');});
+window.addEventListener('afterprint',fit);
+document.addEventListener('DOMContentLoaded',()=>{restore();fit();autofit();setTimeout(audit,300);});
+
+var SEL='.eyebrow,h1,h2,.lede,.foot,.ct,.cl,.cd,.num,.price,.chip,.brand,.pn,.durval,.note,ul.dots,ul.txt';
+var KEY='pbm-v2-';
+function keys(){
+  var map=[];
+  document.querySelectorAll('.slide').forEach(function(sl,i){
+    sl.querySelectorAll(SEL).forEach(function(el,j){
+      el.dataset.e='s'+i+'-'+j; map.push(el);
+      el.querySelectorAll('i').forEach(function(n){n.contentEditable='false';});
+    });
+  });
+  return map;
+}
+function restore(){
+  keys().forEach(function(el){
+    var v=null; try{v=localStorage.getItem(KEY+el.dataset.e);}catch(e){}
+    if(v!==null) el.innerHTML=v;
+  });
+}
+var t=null;
+function flash(){var s=document.getElementById('saved');s.classList.add('show');
+  clearTimeout(t);t=setTimeout(function(){s.classList.remove('show');},1100);}
+var rp=null;
+function onEdit(ev){
+  var el=ev.target.closest('[data-e]'); if(!el) return;
+  try{localStorage.setItem(KEY+el.dataset.e, el.innerHTML);}catch(e){}
+  flash();
+  clearTimeout(rp); rp=setTimeout(function(){autofit();overflow();},260);
+}
+function autofit(){
+  var n=[];
+  document.querySelectorAll('.glass').forEach(function(g,i){
+    g.classList.remove('fit1','fit2');
+    var c=g.querySelector('.gc'); if(!c) return;
+    if(c.scrollHeight>c.clientHeight+1){
+      g.classList.add('fit1');
+      if(c.scrollHeight>c.clientHeight+1){g.classList.remove('fit1');g.classList.add('fit2');n.push(i+':fit2');}
+      else n.push(i+':fit1');
+    }
+  });
+  if(n.length) console.warn('AUTOFIT '+n.join(', '));
+  else console.log('AUTOFIT nada que ajustar');
+}
+function overflow(){
+  var n=0;
+  document.querySelectorAll('.glass').forEach(function(g){
+    var c=g.querySelector('.gc'), o=c && c.scrollHeight>c.clientHeight+1;
+    g.classList.toggle('over',!!o); if(o) n++;
+  });
+  var w=document.getElementById('overwarn');
+  w.classList.toggle('show',n>0);
+  w.textContent=n===1 ? 'Una tarjeta se ha quedado sin espacio: acorta el texto o quita una línea.'
+    : n+' tarjetas se han quedado sin espacio: acorta el texto o quita alguna línea.';
+}
+function setEdit(on){
+  document.body.classList.toggle('editing',on);
+  if(on) overflow();
+  document.querySelectorAll('[data-e]').forEach(function(el){el.contentEditable=on?'true':'false';});
+  document.getElementById('btnEdit').classList.toggle('on',on);
+  document.getElementById('btnEdit').textContent=on?'✓ Terminar edición':'✎ Editar texto';
+}
+function reset(){
+  if(!confirm('¿Descartar todos los cambios de texto y volver al original?')) return;
+  try{Object.keys(localStorage).filter(function(k){return k.indexOf(KEY)===0;})
+      .forEach(function(k){localStorage.removeItem(k);});}catch(e){}
+  location.reload();
+}
+function download(){
+  var was=document.body.classList.contains('editing');
+  setEdit(false);
+  var doc=document.documentElement.cloneNode(true);
+  doc.querySelectorAll('[contenteditable]').forEach(function(e){e.removeAttribute('contenteditable');});
+  doc.querySelector('body').className='';
+  var html='<!DOCTYPE html>\n'+doc.outerHTML;
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  a.download='Propuesta-Bernabeu-Market-editado.html'; a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);},4000);
+  if(was) setEdit(true);
+}
+document.addEventListener('input',onEdit);
+document.addEventListener('paste',function(ev){
+  if(!document.body.classList.contains('editing')) return;
+  if(!ev.target.closest||!ev.target.closest('[data-e]')) return;
+  ev.preventDefault();
+  var txt=(ev.clipboardData||window.clipboardData).getData('text/plain');
+  document.execCommand('insertText',false,txt);
+});
+</script>
+</body></html>
