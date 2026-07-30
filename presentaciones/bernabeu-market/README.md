@@ -45,7 +45,8 @@ punto de potencial de mejora en GEO.
 | `Propuesta-Bernabeu-Market.html` | La presentación. Un solo archivo, sin dependencias externas. |
 | `Propuesta-Bernabeu-Market.pdf` | Export a PDF, 11 páginas 16:9. |
 | `assets/` | Logos de Odiseum (logo e isotipo, blanco y negro, SVG y PNG). |
-| `assets/fondos/` | Las cuatro fotos de fondo en uso, a 1280×720. |
+| `assets/fondos/` | Las cinco fotos de fondo, a 1280×720. |
+| `exportar-pdf.mjs` | Regenera el PDF sin diálogo de impresión. |
 
 ## El exportado: de dónde venían las manchas
 
