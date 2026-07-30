@@ -10,28 +10,28 @@ Dos cosas distintas, las dos del efecto "liquid glass" del HTML original:
 1. **Cada tarjeta llevaba dentro una copia difuminada de la foto de fondo**
    (`<img class="frost">`, reposicionada por JS en cada repintado). Al imprimir, esa capa
    se convertía en un borrón sucio dentro de la propia tarjeta.
-2. **La foto a sangre detrás de las páginas de contenido.** Este es el problema de fondo y
-   no se arregla con ajustes: en esas páginas las tarjetas ocupan casi toda la superficie,
-   así que de la foto solo asoma un borde irregular y desenfocado entre ellas. Eso siempre
-   se lee como un borrón, no como una imagen. Se probó a subir el velo (la foto quedaba
-   como una silueta sin forma, peor) y a bajarlo (volvían a asomar las manchas).
+2. **El exportado desde el HTML.** Esta era la causa de fondo, y es la de la sección
+   siguiente. Las fotos nunca fueron el problema.
 
 ## Qué se ha cambiado
 
-Las fotos se mantienen: son la dirección de arte de la marca. Pero solo donde tienen
-espacio para leerse como fotografía.
+Las once páginas llevan foto a sangre, como el original: son la dirección de arte de la
+marca. Lo que se ha quitado son las capas que ensuciaban el exportado.
 
-- **Se elimina la capa `frost`.** Cada tarjeta es ahora un panel casi opaco y uniforme.
-- **Portada y cierre (`.slide.hero`): foto a sangre**, con un velo suave. Son las dos
-  páginas con poco texto, así que la imagen se ve entera y luce.
-- **Páginas de contenido: sin foto.** Superficie lisa de marca, en tres tonos que rotan
-  (`data-tone="a|b|c"`), degradados sobre negro cálido. Cero textura entre tarjetas, cero
-  manchas posibles.
+- **Se elimina la capa `frost`** (la copia difuminada de la foto dentro de cada tarjeta).
+  Cada tarjeta es ahora un panel opaco y uniforme, así que el texto nunca se apoya sobre
+  la imagen y da igual lo que pase por detrás.
+- **Velo de cabecera** sobre la foto, para el antetítulo, el título y la entradilla, que sí
+  van directos sobre ella. Al imprimir se sustituye por un velo plano y uniforme.
+- **El camino de impresión es plano** (ver la sección siguiente). Es lo que arregla las
+  manchas de verdad.
 - Exportación a PDF a 1600×900 px a sangre (antes 1650×950 con margen blanco).
 - El logo va incrustado como SVG (`assets/odiseum-logo-white.svg`), no como PNG.
 
-De las cinco fotos originales se usan dos: `angel` (portada) y `birds` (cierre). Las otras
-quedan en `assets/fondos/` por si se quieren rotar o recuperar.
+Rotación de fondos: `angel`, `surf`, `roll`, `surf`, `eames`, `roll`, `surf`, `roll`,
+`angel`, `surf`, `birds`. `birds` (la bandada de estorninos) se reserva para el cierre, que
+casi no tiene texto y es donde luce. `eames` se usa una sola vez porque sus puntos negros
+se notan en los huecos entre tarjetas.
 
 El contenido es el de la versión nueva del PDF, no el del HTML antiguo. Incluye los
 cambios que traía esa versión: 290 €/mes de mantenimiento (antes 190 €), lista de
@@ -66,8 +66,9 @@ PDF salía sucio al exportarlo desde el HTML aunque en pantalla se viera perfect
 
 La solución está en el bloque `@media print`: sustituye todas esas capas por color opaco.
 No queda nada que rasterizar. Medida objetiva del cambio: el PDF pasó de **6,4 MB a
-0,42 MB**, y las nueve páginas de contenido ya no contienen ninguna imagen — son texto y
-vectores puros. Solo la portada y el cierre llevan un bitmap, que es la fotografía.
+0,7 MB** (0,42 MB en la versión sin fotos), y cada página contiene exactamente **una
+imagen: la fotografía**. Ni una sola capa rasterizada de más. Una foto es un bitmap y se
+imprime limpia; lo que se rasterizaba mal eran las sombras, los filtros y los degradados.
 
 Esas mismas reglas están duplicadas en `body.flatmode`, que es lo que activa el botón
 **Vista de exportación**: te deja ver en pantalla exactamente lo que va a salir en el PDF
