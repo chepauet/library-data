@@ -3,24 +3,32 @@
 Presentación de la propuesta de colaboración (Optimización web & sistema de pedidos QR),
 reconstruida a partir del PDF de la versión nueva pero **sin las manchas**.
 
-## Qué había mal
+## Qué eran las manchas
 
-El PDF original se exportaba desde un HTML cuyos fondos eran fotos con desenfoque de
-movimiento, y cada tarjeta llevaba encima una copia difuminada de esa misma foto
-(el efecto "liquid glass"). Al imprimir, esas capas se convertían en manchones oscuros
-y moteados que atravesaban las tarjetas y el texto, sobre todo en las páginas 2, 4 y 8.
+Dos cosas distintas, las dos del efecto "liquid glass" del HTML original:
+
+1. **La foto de la bandada de estorninos** (`birds`) estaba asignada a las páginas 2 y 8,
+   las dos más densas. El manchón negro moteado de los pájaros caía justo detrás de las
+   tarjetas y del texto.
+2. **Cada tarjeta llevaba dentro una copia difuminada de la foto de fondo**
+   (`<img class="frost">`, reposicionada por JS en cada repintado). Al imprimir, esa capa
+   se convertía en un borrón sucio dentro de la propia tarjeta.
 
 ## Qué se ha cambiado
 
-- Fondos: las cinco fotos desenfocadas se sustituyen por cinco degradados lisos en la
-  paleta de Odiseum (`ember`, `slate`, `amber`, `pine`, `night`). No hay ni una sola
-  imagen rasterizada en el PDF, así que no puede aparecer ninguna mancha.
-- Tarjetas: el efecto glass se consigue con relleno translúcido + borde, sin la imagen
-  difuminada de fondo que había que reposicionar por JS.
-- Se retiran las sombras de texto y las sombras fuertes de caja, que emborronaban la
-  lectura sobre los fondos oscuros.
+Las fotos se mantienen: son la dirección de arte de la marca.
+
+- **Se elimina la capa `frost`.** Cada tarjeta pasa a tener un velo oscuro propio, opaco y
+  uniforme. El texto nunca se apoya directamente sobre la foto, así que da igual lo que
+  pase por detrás de la tarjeta.
+- **Velo general sobre la foto**, para que ninguna zona oscura de la imagen compita con el
+  texto de cabecera, que sí va directo sobre ella (y por eso conserva sombra de legibilidad).
+- **Reasignación de fondos.** `birds` (la bandada) se queda solo en el cierre, que casi no
+  tiene texto y es donde luce. Las páginas densas usan `surf` y `roll`, las más suaves.
+  `eames` (el cartel de puntos negros) sale del rotativo: detrás de una tarjeta siempre se
+  leía como moteado.
 - Exportación a PDF a 1600×900 px a sangre (antes 1650×950 con margen blanco).
-- El logo de Odiseum va incrustado como SVG (`assets/odiseum-logo-white.svg`), no como PNG.
+- El logo va incrustado como SVG (`assets/odiseum-logo-white.svg`), no como PNG.
 
 El contenido es el de la versión nueva del PDF, no el del HTML antiguo. Incluye los
 cambios que traía esa versión: 290 €/mes de mantenimiento (antes 190 €), lista de
@@ -34,6 +42,7 @@ punto de potencial de mejora en GEO.
 | `Propuesta-Bernabeu-Market.html` | La presentación. Un solo archivo, sin dependencias externas. |
 | `Propuesta-Bernabeu-Market.pdf` | Export a PDF, 11 páginas 16:9. |
 | `assets/` | Logos de Odiseum (logo e isotipo, blanco y negro, SVG y PNG). |
+| `assets/fondos/` | Las cuatro fotos de fondo en uso, a 1280×720. |
 
 ## Cómo usarla
 
@@ -44,3 +53,11 @@ Abre el HTML en el navegador. Abajo a la derecha hay cuatro botones:
 - **Restablecer** — descarta los cambios y vuelve al original.
 - **Descargar HTML** — te bajas una copia con los cambios ya aplicados.
 - **Exportar a PDF** — imprime a PDF. En el diálogo: márgenes «Ninguno» y gráficos de fondo activados.
+
+## Nota sobre el peso del PDF
+
+Son 6,4 MB: once páginas a sangre con foto de fondo. No lo recomprimas con
+`PyMuPDF.rewrite_images()` — descarta los degradados de los velos y las tarjetas salen
+planas (comprobado: diferencia media de hasta 35/255 por canal frente al original).
+Si hace falta bajar peso, reduce la calidad de los JPEG de `assets/fondos/` y vuelve a
+exportar.
