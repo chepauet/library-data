@@ -157,6 +157,14 @@ body.editing .over-warn.show{display:block}
  border:1px solid rgba(47,107,79,.25);border-radius:999px;padding:9px 14px;opacity:0;transition:opacity .25s}
 .saved.show{opacity:1}
 
+/* ---------- vista plana ----------
+   El motivo de las manchas: el motor de impresión (sobre todo el de Safari)
+   compone en bitmaps de baja resolución cualquier capa blanda -- filtros,
+   sombras difusas, degradados radiales apilados con transparencia, recortes
+   por overflow. Al imprimir se sustituye todo eso por color opaco, así que no
+   queda nada que rasterizar y el PDF sale igual en cualquier navegador.
+   El botón "Vista de exportación" aplica exactamente estas mismas reglas en
+   pantalla, para poder comprobar el resultado antes de exportar. */
 @media print{
  @page{size:1600px 900px;margin:0}
  html,body{background:#fff}
@@ -166,12 +174,47 @@ body.editing .over-warn.show{display:block}
  .stage{aspect-ratio:auto;width:1600px;height:900px;max-width:none;break-inside:avoid;page-break-inside:avoid;
   break-after:page;page-break-after:always}
  .stage:last-child{break-after:auto;page-break-after:auto}
- .slide{transform:none!important;box-shadow:none;border-radius:0}
+ .slide{transform:none!important}
+
+ .slide{overflow:visible;border-radius:0;box-shadow:none}
+ .slide[data-tone="a"]{background-image:none;background-color:#221B13}
+ .slide[data-tone="b"]{background-image:none;background-color:#241C12}
+ .slide[data-tone="c"]{background-image:none;background-color:#1F1811}
+ .slide.hero::before{background:rgba(10,8,6,.45)}
+ .glass{background:#1C1712;border-color:#3B322A;box-shadow:none}
+ .eyebrow,h1.big,h2,.lede,.foot,.brand,.pn{text-shadow:none}
+ .logo{filter:none}
+ .num{opacity:1;color:#F0EBE4}
+ .rule{background:#4A4038}
+ .dur{background:#241E17;border-color:#3B322A}
+ .chip{background:#241E17;border-color:#4A4038}
+ .chip.g{background:#1A2A21;border-color:#3D6B55}
+ .chip.a{background:#2C2417;border-color:#6B5A37}
+ .stepn{background:#2A2114;border-color:#6B5A3C}
+ ul.dots li::before{background:#EBCB9E}
+ ul.txt li{border-left-color:#7A6647}
  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+body.flatmode .slide{overflow:visible;border-radius:0;box-shadow:none}
+body.flatmode .slide[data-tone="a"]{background-image:none;background-color:#221B13}
+body.flatmode .slide[data-tone="b"]{background-image:none;background-color:#241C12}
+body.flatmode .slide[data-tone="c"]{background-image:none;background-color:#1F1811}
+body.flatmode .slide.hero::before{background:rgba(10,8,6,.45)}
+body.flatmode .glass{background:#1C1712;border-color:#3B322A;box-shadow:none}
+body.flatmode .eyebrow,body.flatmode h1.big,body.flatmode h2,body.flatmode .lede,body.flatmode .foot,body.flatmode .brand,body.flatmode .pn{text-shadow:none}
+body.flatmode .logo{filter:none}
+body.flatmode .num{opacity:1;color:#F0EBE4}
+body.flatmode .rule{background:#4A4038}
+body.flatmode .dur{background:#241E17;border-color:#3B322A}
+body.flatmode .chip{background:#241E17;border-color:#4A4038}
+body.flatmode .chip.g{background:#1A2A21;border-color:#3D6B55}
+body.flatmode .chip.a{background:#2C2417;border-color:#6B5A37}
+body.flatmode .stepn{background:#2A2114;border-color:#6B5A3C}
+body.flatmode ul.dots li::before{background:#EBCB9E}
+body.flatmode ul.txt li{border-left-color:#7A6647}
 </style></head>
 <body>
-<div class="bar"><button id="btnEdit" onclick="setEdit(!document.body.classList.contains('editing'))">✎ Editar texto</button><button onclick="reset()">Restablecer</button><button onclick="download()">Descargar HTML</button><button onclick="window.print()">Exportar a PDF</button></div><div class="hint">Haz clic en cualquier texto y escribe. Enter dentro de una lista crea un punto nuevo; borrar la línea entera lo elimina. Se guarda solo.</div><div class="over-warn" id="overwarn"></div><div class="saved" id="saved">Guardado</div>
+<div class="bar"><button id="btnEdit" onclick="setEdit(!document.body.classList.contains('editing'))">✎ Editar texto</button><button onclick="reset()">Restablecer</button><button onclick="download()">Descargar HTML</button><button id="btnFlat" onclick="setFlat(!document.body.classList.contains('flatmode'))">◻ Vista de exportación</button><button onclick="window.print()">Exportar a PDF</button></div><div class="hint">Haz clic en cualquier texto y escribe. Enter dentro de una lista crea un punto nuevo; borrar la línea entera lo elimina. Se guarda solo.</div><div class="over-warn" id="overwarn"></div><div class="saved" id="saved">Guardado</div>
 <div class="deck">
 
 <!-- 01 · Portada -->
@@ -401,6 +444,12 @@ function setEdit(on){
   document.querySelectorAll('[data-e]').forEach(function(el){el.contentEditable=on?'true':'false';});
   document.getElementById('btnEdit').classList.toggle('on',on);
   document.getElementById('btnEdit').textContent=on?'✓ Terminar edición':'✎ Editar texto';
+}
+function setFlat(on){
+  document.body.classList.toggle('flatmode',on);
+  var b=document.getElementById('btnFlat');
+  b.classList.toggle('on',on);
+  b.textContent=on?'◼ Vista normal':'◻ Vista de exportación';
 }
 function reset(){
   if(!confirm('¿Descartar todos los cambios de texto y volver al original?')) return;
